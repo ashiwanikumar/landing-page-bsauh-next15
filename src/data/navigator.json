@@ -1,0 +1,44 @@
+{
+  "HOME": {
+    "title": "Home",
+    "href": "/"
+  },
+  "ABOUT_US": {
+    "title": "About Us",
+    "href": "/about/about-us"
+
+  },
+ 
+  "BLOG": {
+    "title": "Blog",
+    "href": "/blog"
+  },
+
+  "EVENTS WEBINARS": {
+    "title": "Events",
+    "href": "#",
+    "subMenu": [
+      { "title": "Upcoming Events", "href": "/events/upcoming-events" },
+      { "title": "Past Events", "href": "/events/past-events" },
+      { "title": "Event Gallery", "href": "/events/event-gallery" }
+    ]
+  },
+
+"JOIN US": {
+  "title": "Join Us",
+  "href": "/joinus" 
+},
+"More": {
+  "title": "More",
+  "href": "#",
+  "subMenu": [
+    { "title": "Gallery", "href": "/resources/gallery" },
+    { "title": "Social Media", "href": "/resources/social-media" },
+    { "title": "Talent Registration", "href": "/community/talent-registration"},
+    { "title": "Privacy Policy", "href": "/information/privacy-policy" },
+    { "title": "Welfare Case", "href": "/community/welfare" },
+    { "title": "Terms Service", "href": "/information/terms-service" },
+    { "title": "Support Portal", "href": "/support/payment-help" }
+  ]
+}
+}

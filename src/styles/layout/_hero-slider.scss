@@ -1,0 +1,263 @@
+.hero-slider {
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    img {
+      @include imgCenter;
+    }
+  }
+  &-image {
+    img {
+      max-width: 100%;
+      min-height: 100%;
+    }
+  }
+  &.-pink {
+    --green-color: #{setColor(pink)};
+  }
+  &.-coffee {
+    --green-color: #{setColor(coffee)};
+  }
+  &.-carousel {
+    .slick-slider-item {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      img {
+        width: 100%;
+        max-height: 1000px;
+        object-fit: cover;
+      }
+      .slider-caption {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        text-align: center;
+        z-index: 10;
+        h3 {
+          @include typo($fsz: emCal(16, 30), $color: #fff, $fw: 600);
+          margin-bottom: emCal(30, 10);
+        }
+        p {
+          @include typo(setShadeColor(medium), $lh: emCal(16, 20));
+          margin-bottom: 0;
+          .slick-prev, .slick-next {
+            // Adjust these values as needed
+            z-index: 20;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          
+          .slick-prev {
+            left: 10px; // Adjust based on your design
+          }
+          
+          .slick-next {
+            right: 10px; // Adjust based on your design
+
+            @media (max-width: 768px) {
+              &.-carousel {
+                .slick-prev, .slick-next {
+                  // Adjust positions for smaller screens
+                }
+            .custom-slick-dots {
+              bottom: 10px; // Move closer to the bottom of the slider
+              li button:before {
+        }
+      }
+      }
+    }
+  }
+    }
+      }
+    }
+
+
+  
+  }
+  &.-single {
+    .hero-slider-wrapper {
+      position: relative;
+      .hero-slider-content-wrapper {
+        padding: 0 emCal(16, 15);
+        .hero-slider-content {
+          @include mq(md) {
+            margin-bottom: emCal(14, 30);
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    h5 {
+      @include typo($fsz: emCal(16, 14), $color: setColor(green), $fw: 600);
+      letter-spacing: emCal(14, 2.8);
+      margin-bottom: emCal(14, 10);
+    }
+    h1 {
+      @include typo($fsz: emCal(16, 60), $fw: 600);
+      margin-bottom: emCal(60, 15);
+    }
+    h3 {
+      @include typo($fsz: emCal(16, 30), $color: setColor(green), $fw: 600);
+      margin-bottom: emCal(30, 50);
+      span {
+        font-size: emCal(30, 18);
+        color: setShadeColor(medium);
+        font-family: getFontWeight(500);
+      }
+    }
+    .ant-btn {
+      font-size: emCal(16, 13);
+      font-family: getFontWeight(600);
+      height: emCal(16, 55);
+      text-transform: uppercase;
+      padding: 0 emCal(16, 45);
+    }
+  }
+  &.-style-one {
+    .hero-slider-content-wrapper {
+      padding: emCal(16, 100) 0;
+      .hero-slider-content {
+        @include mq(md) {
+          margin-bottom: emCal(14, 50);
+        }
+      }
+      .hero-slider-image {
+        background: {
+          /* Comment out or remove the background image for now */
+          /* image: url("/assets/images/hero-slider/one/deco.png"); */
+          size: contain;
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+  &.-style-two {
+    margin-bottom: $section-spacing;
+    .hero-slider-wrapper {
+      padding: emCal(16, 100) 0;
+      margin-bottom: emCal(16, 15);
+    }
+  }
+  &.-style-three {
+    margin-top: emCal(16, 30);
+    margin-bottom: $section-spacing;
+    @include mq(md) {
+      margin-top: emCal(14, 470);
+    }
+    .hero-slider-wrapper {
+      padding: emCal(16, 52) emCal(16, 15);
+      .hero-slider-content {
+        h1 {
+          font-size: emCal(16, 36);
+          margin-bottom: emCal(36, 20);
+        }
+        p {
+          @include typo(setShadeColor(medium), $lh: emCal(16, 26));
+          margin-bottom: emCal(16, 50);
+        }
+      }
+    }
+  }
+  &.-style-four {
+    margin-bottom: $section-spacing;
+    .hero-slider-content-wrapper {
+      text-align: center;
+      .hero-slider-content, .slick-slider-item {
+        img {
+          @include imgCenter($width: emCal(16, 330), $type: contain);
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: emCal(16, 30);
+        }
+      }
+    }
+  }
+  &.-style-five { // Assuming this is where you want to apply custom styles, adjust if necessary
+    .slick-dots.custom-slick-dots {
+      bottom: -25px; // Adjust position as needed
+      li {
+        button {
+          &:before {
+            font-size: 0; // Hide the default dot
+            color: transparent;
+          }
+        }
+        &.slick-active button:before {
+          opacity: 1;
+        }
+      }
+      li button:before {
+        content: ''; // Override Slick's default
+        height: 3px;
+        width: 30px;
+        background-color: #eeebeb;
+        opacity: 0.5;
+        transition: opacity 0.6s ease;
+      }
+    }
+  }
+}
+
+.slick-slide {
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.slick-current {
+    animation: slideIn 1s ease forwards;
+  }
+
+  &:not(.slick-current) {
+    animation: slideOut 1s ease forwards;
+  }
+}
+.video-container {
+  position: relative;
+}
+
+.control-bar {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+  background-color: #2f2f2f;
+  border-radius: 6px;
+}
+
+.control-button {
+  padding: 5px 10px;
+  color: #c4c4c4;
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}

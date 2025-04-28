@@ -1,0 +1,102 @@
+.bsad-sitemap {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+
+  &__breadcrumb {
+    margin-bottom: 32px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 48px;
+
+    h1 {
+      color: #25712f;
+      margin: 16px 0;
+      font-size: 2.5rem;
+    }
+
+    .ant-typography {
+      font-size: 1.1rem;
+      color: #666;
+    }
+  }
+
+  &__icon {
+    color: #25712f;
+  }
+
+  &__content {
+    margin-top: 32px;
+  }
+
+  &__section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: #25712f;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 12px;
+
+        a {
+          display: flex;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #25712f;
+          }
+
+          svg {
+            margin-right: 8px;
+            color: #25712f;
+          }
+
+          span {
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+          }
+
+          &:hover span {
+            border-color: #25712f;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    &__section {
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

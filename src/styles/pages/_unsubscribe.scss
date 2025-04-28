@@ -1,0 +1,142 @@
+// _unsubscribe.scss
+
+.unsubscribe-page {
+    min-height: 100vh;
+    background: #f5f5f5;
+  
+    .unsubscribe-hero {
+      background: linear-gradient(to right, rgb(8, 202, 63), rgb(140, 187, 107), rgb(73, 146, 77));
+      padding: 4rem 0;
+      margin-bottom: -4rem;
+      position: relative;
+      overflow: hidden;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.1;
+      }
+  
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+      }
+  
+      .hero-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        svg {
+          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+      }
+  
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+  
+      p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  
+    .unsubscribe-container {
+      position: relative;
+      padding: 2rem 1rem;
+      z-index: 2;
+    }
+  
+    .unsubscribe-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(10px);
+      border: none;
+      overflow: hidden;
+      transform: translateY(-2rem);
+      
+      .card-content {
+        padding: 2rem;
+      }
+  
+      // Custom styling for form elements
+      .ant-form-item {
+        margin-bottom: 1.5rem;
+      }
+  
+      .ant-btn {
+        height: 44px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+  
+        &-primary {
+          background: linear-gradient(to right, rgb(8, 202, 63), rgb(73, 146, 77));
+          border: none;
+          
+          &:hover {
+            background: linear-gradient(to right, rgb(7, 182, 56), rgb(66, 131, 69));
+            transform: translateY(-1px);
+          }
+        }
+      }
+  
+      // Loading states
+      .ant-spin {
+        .ant-spin-dot-item {
+          background-color: rgb(8, 202, 63);
+        }
+      }
+    }
+  
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      .unsubscribe-hero {
+        padding: 3rem 0;
+        
+        h1 {
+          font-size: 2rem;
+        }
+        
+        p {
+          font-size: 1rem;
+        }
+      }
+  
+      .unsubscribe-card {
+        transform: translateY(-1rem);
+        
+        .card-content {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+  
+  // Custom animations
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }

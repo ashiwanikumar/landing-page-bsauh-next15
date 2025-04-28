@@ -1,0 +1,177 @@
+.loading-overlay-talent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; // Ensure it's above other content
+}
+
+.loading-spinner-talent {
+  width: 100px;
+  height: 100px;
+  border: 7px solid #60c26b;
+  border-radius: 50%;
+  border-top-color: transparent;
+  display: inline-block;
+  animation: loadingSpinnerTalent 0.7s linear infinite;
+}
+
+@keyframes loadingSpinnerTalent {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.member-confirmation-button {
+  transition: all 250ms ease-in-out;
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  outline: none;
+  display: flex;
+  justify-content: center; // Center content horizontally
+  align-items: center; // Center content vertically
+  margin: 17px 5px;
+  padding: 10px 20px; // Add some padding to ensure text fits well inside the button
+
+  &.yes-member, &.no-member {
+    width: auto; // Allow the button to grow as needed based on content
+    cursor: pointer; // Change cursor to pointer to indicate it's clickable
+    text-align: center; // Ensure text is centered
+  }
+
+  &.yes-member {
+    background: linear-gradient(45deg, #19CC95, #17a77b);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(45deg, #17b583, #159d6e);
+      transform: scale(1.05);
+    }
+  }
+
+  &.no-member {
+    background: linear-gradient(45deg, #f44336, #d2302d);
+    color: white;
+
+    &:hover {
+      background: linear-gradient(45deg, #d32f2f, #b12a2a);
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+// Media query for mobile devices
+@media (max-width: 480px) {  // Targeting smaller mobile devices
+  .member-confirmation-button {
+    padding: 8px 12px; // Further reduce padding
+    font-size: 12px; // Reduce font size to fit smaller screens
+    margin: 5px 2px; // Reduce margin to fit more content
+    width: 100%; // Full width to prevent overflow and ensure tapping area
+    
+
+    &:hover {
+      transform: scale(1.02); // Subtle transform on mobile to prevent layout shift
+    }
+    
+  }
+
+  // Ensure button container adapts to smaller screens
+  .community-verification-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px; // Adjust padding to ensure it doesn't take too much space
+  }
+}
+.upload-photo-section-full {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  position: relative; // To position the overlay text absolutely
+
+  .upload-photo-button-talent {
+    position: relative;
+    width: auto;
+    margin-top: 10px;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    &:hover span {
+      display: block;
+    }
+  }
+
+  .uploaded-photo {
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  .delete-photo-button-talent {
+    width: auto;
+    margin-top: 10px;
+  }
+}
+
+.profile-photo-message {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 15px;
+  margin: 20px 0; // Adjust as needed to create space above and below the box
+  background-color: #fff; // Optional: set background color if needed
+}
+
+.community-info {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  padding: 15px;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center; /* Centers the text within the paragraph */
+}
+
+
+
+
+.custom-validation.ant-form-item-has-error .ant-form-item-control-input-content .ant-input,
+.custom-validation.ant-form-item-has-error .ant-form-item-control-input-content .ant-select-selector {
+  border-color: red !important;
+}
+
+.custom-validation .ant-form-item-explain,
+.custom-validation .ant-form-item-explain-error {
+  display: none !important;
+}
+

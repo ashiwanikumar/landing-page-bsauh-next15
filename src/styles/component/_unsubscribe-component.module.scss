@@ -1,0 +1,161 @@
+// _unsubscribe-component.scss
+
+.bsad-unsubscribe-wrapper {
+    min-height: 100vh;
+    background: #ffffff;
+    
+    .bsad-unsubscribe-card {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #ffffff, #f9f9f9);
+      
+      &__content {
+        padding: 2rem;
+        
+        @media (min-width: 768px) {
+          padding: 2.5rem;
+        }
+        
+        h1 {
+          color: #2B3990;
+          font-size: 1.75rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+          line-height: 1.3;
+        }
+      }
+    }
+  
+    .bsad-status-message {
+      text-align: center;
+      padding: 3rem;
+      
+      &__title {
+        font-size: 1.5rem;
+        color: #2B3990;
+        margin-bottom: 1rem;
+      }
+      
+      &__text {
+        color: #666;
+        font-size: 1.1rem;
+      }
+      
+      .ant-spin {
+        margin-bottom: 1.5rem;
+        
+        .ant-spin-dot-item {
+          background-color: rgb(8, 202, 63);
+        }
+      }
+    }
+  
+    .bsad-action-button {
+      &--unsubscribe {
+        background: linear-gradient(to right, rgb(8, 202, 63), rgb(73, 146, 77));
+        border: none;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        height: auto;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-1px);
+        }
+      }
+      
+      &--link {
+        color: rgb(8, 202, 63);
+        font-weight: 500;
+        padding: 0;
+        height: auto;
+        
+        &:hover {
+          color: rgb(73, 146, 77);
+          text-decoration: underline;
+        }
+      }
+      
+      &--secondary {
+        background-color: #F2F2F2;
+        border: 1px solid #E5E5E5;
+        color: #666;
+        padding: 0.5rem 1rem;
+        height: auto;
+        font-weight: 500;
+        
+        &:hover {
+          background-color: #E8E8E8;
+          border-color: #D8D8D8;
+        }
+      }
+    }
+  
+    .bsad-divider {
+      border-top: 1px solid #E5E5E5;
+      margin: 2rem 0;
+      position: relative;
+      
+      &__content {
+        margin: 2rem 0;
+        padding: 1.5rem 0;
+      }
+    }
+  
+    .bsad-preferences {
+      &__text {
+        color: #444;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      &__button {
+        background: linear-gradient(to right, rgb(8, 202, 63), rgb(73, 146, 77));
+        border: none;
+        color: white;
+        padding: 0.75rem 2rem;
+        height: auto;
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          opacity: 0.9;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(8, 202, 63, 0.15);
+        }
+      }
+    }
+  
+    .bsad-footer {
+      &__notice {
+        color: #888;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+        
+        &:first-of-type {
+          margin-bottom: 0.75rem;
+        }
+      }
+    }
+  
+    // Animation classes
+    .bsad-fade-in {
+      animation: bsadFadeIn 0.4s ease-out forwards;
+    }
+  
+    @keyframes bsadFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }

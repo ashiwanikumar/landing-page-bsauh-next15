@@ -1,0 +1,91 @@
+/**
+ * _prod.scss - Critical CSS for production
+ * This file ensures basic styling is available immediately
+ */
+
+/* Control visibility during loading */
+html.loading {
+  visibility: hidden;
+}
+
+/* Core animation definitions */
+@keyframes freshDairyFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bihar Samaj specific critical styles */
+body {
+  font-family: "Manrope", "Hind", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dairyFreshGradient {
+  background: linear-gradient(-45deg, #ffffff, #ffebd8, #fff0e1, #e9f2f9);
+  background-size: 500% 500%;
+  animation: freshDairyFlow 12s ease infinite;
+}
+
+/* Production-specific fixes */
+.top-bar-wrapper {
+  background-color: #73c97c;
+  color: #fff;
+}
+
+.header-area {
+  background-color: #fff;
+}
+
+.footer-area {
+  background-color: #73c97c;
+  color: #fff;
+}
+
+/* Ensure these components are visible */
+[data-reactroot],
+header,
+main,
+footer {
+  display: block !important;
+}
+
+/* Top navigation bar colors */
+.header-area {
+  background-color: #fff;
+}
+
+/* Critical button styling */
+button,
+a.btn {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Green accents for Bihar Samaj theme */
+.accent-green {
+  color: #73c97c;
+}
+
+.bg-green {
+  background-color: #73c97c;
+}

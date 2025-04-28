@@ -1,0 +1,10 @@
+/* src/styles/_dev.scss */
+/* This file contains fixes specific to development mode */
+
+/* Force-show elements that might be hidden due to CSS loading issues */
+body {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Add any other development-specific overrides here */

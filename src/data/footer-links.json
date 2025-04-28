@@ -1,0 +1,39 @@
+[
+  {
+    "title": "QUICK LINKS",
+    "items": [
+      { "title": "Home", "href": "/" },
+      { "title": "About us", "href": "/about/about-us" },
+      { "title": "Community", "href": "/community"},
+      { "title": "Newsletter", "href": "/information/newsletter-subscription"},
+      { "title": "Facebook Posts", "href": "/resources/social-media/facebook-posts" },
+      { "title": "Instagram Posts", "href": "/resources/social-media/instagram-posts" },
+      { "title": "LinkedIn Posts", "href": "/resources/social-media/linkedin-posts" }
+    ]
+  },
+  {
+    "title": "RESOURCES",
+    "items": [
+      { "title": "Our Blog", "href": "/blog" },
+      { "title": "Gallery", "href": "/resources/gallery" },
+      { "title": "Events", "href": "/events" },
+      { "title": "Cancel Event Registration", "href": "/events/cancel-registration" },
+      { "title": "Social Media", "href": "/resources/social-media" },
+      { "title": "Talent Registration", "href": "/community/talent-registration"}
+      
+    ]
+  },
+   {
+    "title": "INFORMATION",
+    "items": [
+      { "title": "Join Us", "href": "/joinus" },
+      { "title": "Privacy Policy", "href": "/information/privacy-policy" },
+      { "title": "Terms of Service", "href": "/information/terms-service" },
+      { "title": "Website Feedback", "href": "/information/contact-us/whats-on-your-mind/website-feedback-form" },
+      { "title": "Sitemap", "href": "/information/sitemap" },
+      { "title": "Welfare", "href": "/community/welfare" },
+      { "title": "Payment Support", "href": "/support/payment-help" }
+
+    ]
+  }
+]

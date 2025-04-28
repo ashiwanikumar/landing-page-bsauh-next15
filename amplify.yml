@@ -1,0 +1,28 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Using Node $(node --version) and NPM $(npm --version)"
+        - npm ci --prefer-offline --no-audit --legacy-peer-deps
+    build:
+      commands:
+        - export NODE_OPTIONS="--max-old-space-size=4096"
+        - export NODE_ENV="production"
+        - npm run build
+        - echo "Setting up for AWS Amplify Next.js deployment..."
+        - mkdir -p .next/standalone/.next/static
+        - cp -R .next/static .next/standalone/.next/
+        - cp -R public .next/standalone/
+        # Copy required-server-files.json - check both locations
+        - cp .next/standalone/required-server-files.json .next/required-server-files.json || cp .next/required-server-files.json .next/standalone/ || echo "Warning: required-server-files.json not found in expected locations"
+        # Ensure server.js is in the right place
+        - cp .next/standalone/server.js .next/server.js || echo "Warning: server.js not found in expected location"
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*

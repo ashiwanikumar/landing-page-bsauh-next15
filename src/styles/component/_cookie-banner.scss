@@ -1,0 +1,42 @@
+.cookie-banner {
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 999;
+}
+
+.cookie-banner .column {
+  margin-bottom: 10px;
+}
+
+.cookie-banner .column h3,
+.cookie-banner .column p {
+  text-align: left;
+}
+
+.cookie-banner .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.cookie-banner .buttons button {
+  /* Button styles remain the same */
+  margin: 5px; /* Adjust the margin between buttons */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .cookie-banner {
+    /* Adjust styles for smaller screens */
+    border-radius: 0;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,64 @@
+.group-preview {
+  background-color: #e2e8e3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin: 100px 0;
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .group-card-container {
+    display: flex;
+    justify-content: space-around; // evenly space the child elements
+    align-items: flex-start; // align items to the start of the container
+    gap: 20px; // space between each card
+
+    @media (max-width: 768px) { // Responsive adjustment for smaller screens
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .group-card {
+    flex-basis: calc(50% - 10px); // each card will take half of the container width minus the gap
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-radius: 10px;
+
+    h4 {
+      color: #0a236e;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .know-more-btn {
+      background-color: #012c59a3;
+      color: #0aec0a;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+      transition: transform 0.2s;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.support-card-title {
+  padding: 12px;
+  background: linear-gradient(
+    45deg,
+    #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc
+  );
+  text-align: center;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.common-card-shadow, .access-card-shadow {
+  box-shadow: rgba(90, 196, 37, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  transition: background-color 0.3s; // Smooth transition for background color change
+}
+
+.common-card-shadow:hover, .access-card-shadow:hover {
+  background-color: #f0f0f0; // Light grey background on hover
+}

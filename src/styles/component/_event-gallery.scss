@@ -1,0 +1,69 @@
+    .social-media-cards-event {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        .social-media-card {
+            box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 10px;
+        height: 250px; // Adjusted for content
+        width: 250px; // Adjusted for consistency
+        text-align: center;
+        background-color: #fff; // Add background color if needed
+        border-radius: 8px; // Optional: rounded corners for cards
+    
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+    
+            i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            }
+    
+            span {
+            font-size: 14px;
+            padding: 0 10px;
+            }
+        }
+    
+        div { // Styles for the div used in the SEO content card
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    
+            i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            }
+    
+            span {
+            font-size: 14px;
+            padding: 0 10px;
+            text-align: center;
+            }
+        }
+        }
+    }
+
+    
+    .gallery-info-card-event {
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        padding: 20px;
+        margin: 20px 0;
+        background-color: #f9f9f9; // Or any color that fits your design
+        border-radius: 8px;
+        text-align: center;
+        font-size: 16px; // Adjust as needed
+    }
+    

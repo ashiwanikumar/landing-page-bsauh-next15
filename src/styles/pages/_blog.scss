@@ -1,0 +1,104 @@
+.blog {
+  margin-bottom: $section-spacing;
+  &-content {
+    .post {
+      margin-bottom: emCal(16, 30);
+    }
+  }
+  &-masonry {
+    margin-bottom: $section-spacing;
+    &-content {
+      column-count: 3;
+      column-gap: emCal(16, 30);
+      @include mq(lg) {
+        column-count: 2;
+        column-gap: (emCal(16, 15));
+      }
+      @include mq(sm) {
+        column-count: 1;
+        column-gap: 0;
+      }
+      .post {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.sa-post-content {
+  color: black; /* This will set the text color to black for all text inside .sa-post-content */
+}
+
+.sa-post-content h1, .sa-post-content h2, .sa-post-content h3, .sa-post-content h4, .sa-post-content h5, .sa-post-content h6 {
+  font-weight: bold; /* This will make all headers bold */
+}
+
+.sa-post-content h1 {
+  font-size: 2em;
+}
+
+.sa-post-content h2 {
+  font-size: 1.5em;
+}
+
+.sa-post-content h3 {
+  font-size: 1.17em;
+}
+
+.sa-post-content h4 {
+  font-size: 1em;
+}
+
+.sa-post-content h5 {
+  font-size: 0.83em;
+}
+
+.sa-post-content h6 {
+  font-size: 0.67em;
+}
+
+.sa-post-content p {
+  margin: 1em 0;
+}
+
+.sa-post-content blockquote {
+  margin: 10px 0;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.sa-post-content pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.sa-post-content code {
+  font-family: monospace;
+}
+
+.sa-post-content img {
+  max-width: 100%;  /* This limits the width to the size of its container. Adjust as needed. */
+  height: auto;
+  max-height: 500px;  /* You can set a maximum height as well */
+  display: block;  /* This makes the image behave like a block level element */
+  margin: auto;  /* This will center the image if it's width is less than its container width */
+}
+
+.sa-post-content ul, .sa-post-content ol {
+  padding-left: 20px;
+}
+
+.sa-post-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sa-post-content th, .sa-post-content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.sa-sa-post-content a {
+  color: blue;
+  text-decoration: underline;
+}

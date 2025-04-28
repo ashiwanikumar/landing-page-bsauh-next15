@@ -1,0 +1,49 @@
+.about-us-preview {
+  background-color: #e2e8e3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin: 100px 0 100px 0;
+
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 1rem;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .know-more-btn {
+    background-color: #012c59a3;
+    color: #0aec0a;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    transition: transform 0.2s;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+} 

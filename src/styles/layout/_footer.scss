@@ -1,0 +1,272 @@
+.footer {
+  &-info {
+    &__logo {
+      display: inline-block;
+      margin-bottom: emCal(16, 20);
+      img {
+        @include imgCenter;
+      }
+    }
+    ul {
+      list-style: none;
+      margin-bottom: emCal(16, 15);
+      li {
+        @include typo(
+          $lh: emCal(16, 36),
+          $color: setShadeColor(medium),
+          $fw: 500
+        );
+      }
+    }
+    @include mq(md) {
+      text-align: center;
+    }
+  }
+  &-links {
+    &__group {
+      @include mq(md) {
+        text-align: center;
+      }
+      h5 {
+        @include typo($up: true, $fw: 600);
+        margin-bottom: emCal(16, 26);
+        margin-top: 1em;
+      }
+      ul {
+        list-style: none;
+        li {
+          &:not(:last-child) {
+            margin-bottom: emCal(16, 10);
+          }
+          a {
+            @include link($color: setShadeColor(medium), $fw: 500);
+          }
+        }
+      }
+    }
+  }
+  &-subcribe {
+    &__content {
+      h5 {
+        @include typo($fsz: emCal(16, 22), $color: #fff, $fw: 600);
+        margin-bottom: emCal(22, 10);
+      }
+      p {
+        @include typo($color: #fff, $lh: emCal(16, 24));
+      }
+      @include mq(md) {
+        margin-bottom: emCal(16, 30);
+      }
+    }
+    &__form {
+      display: flex;
+      align-items: center;
+      .ant-input {
+        height: emCal(16, 50);
+        border: 0;
+        border-radius: 999px 0 0 999px;
+        padding: 0 emCal(16, 30);
+      }
+      .ant-btn {
+        height: emCal(16, 50);
+        border-radius: 0 999px 999px 0;
+        background-color: #fff;
+        font-family: getFontWeight(600);
+        padding: 0 emCal(16, 30);
+        color: setColor(green);
+      }
+    }
+  }
+  &.-style-one {
+    &.-pink {
+      --green-color: #{setColor(pink)};
+      .footer-subcribe {
+        &__form {
+          .ant-input {
+            background-color: #ff9795;
+          }
+        }
+      }
+    }
+    &.-coffee {
+      --green-color: #{setColor(coffee)};
+      .footer-subcribe {
+        &__form {
+          .ant-input {
+            background-color: #ffbb67;
+          }
+        }
+      }
+    }
+    .footer-top {
+      padding-bottom: emCal(16, 60);
+    }
+
+    @keyframes gradientAnimation {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .footer-subcribe {
+      background: linear-gradient(90deg, 
+                              #FF0000, /* UAE Red */
+                              #00732F, /* UAE Green */
+                              #817b7b, /* Shared White */
+                              #000000, /* UAE Black */
+                              #FF9933, /* India Saffron */
+                              #817b7b, /* Shared White */
+                              #138808); /* India Green */
+  padding: emCal(16, 30) 0;
+  .ant-input {
+    background-color: #edf2e7;
+    &::placeholder {
+      color: #000000;
+    }
+  }
+}
+    
+  }
+  &-bottom {
+    padding: emCal(16, 15) 0;
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      p {
+        @include typo($fw: 500, $color: setShadeColor(medium));
+        @include mq(md) {
+          margin-bottom: emCal(16, 10);
+        }
+      }
+      img {
+        @include imgCenter;
+        max-width: 256px;
+      }
+    }
+  }
+  &.-fluid {
+    .footer-top {
+      padding-bottom: emCal(16, 50);
+      border-bottom: 1px solid setShadeColor(light);
+    }
+    .footer-subcribe {
+      background-color: transparent;
+      &__content {
+        h5 {
+          color: setShadeColor(dark);
+          font-size: 1em;
+        }
+        p {
+          color: setShadeColor(medium);
+          margin-bottom: emCal(16, 20);
+        }
+      }
+      &__form {
+        .ant-input {
+          background-color: setColor(light);
+          &::placeholder {
+            color: setShadeColor(medium);
+          }
+        }
+        .ant-btn {
+          background-color: setColor(green);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.footer-links__group li {
+  position: relative;
+}
+
+.newNudge {
+  align-items: center;
+  -webkit-animation: wavyMovementShortcut 1s ease-in-out infinite;
+  animation: wavyMovementShortcut 1s ease-in-out infinite;
+  background: linear-gradient(
+    45deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #bbc000,
+    #00be21,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  border-radius: 5px;
+  box-shadow: 0 10px 36px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px; /* Consider reducing for smaller screens */
+  font-weight: 800;
+  height: 24px; /* Consider adjusting for smaller screens */
+  padding: 2px; /* Consider adjusting for smaller screens */
+  position: absolute;
+  right: 22px; /* Consider adjusting for smaller screens */
+  top: -22px; /* Consider adjusting for smaller screens */
+}
+
+@keyframes wavyMovementShortcut {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .newNudge {
+    font-size: 12px;
+    height: 20px;
+    padding: 2px 4px;
+    right: 10px;
+    top: -18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newNudge {
+    font-size: 10px;
+    height: 16px;
+    padding: 1px 3px;
+    right: 5px;
+    top: -16px;
+  }
+}
+
+
+.footer-info-card {
+  background: linear-gradient(to right, #009245b5, #d6ca228a);
+  border-radius: 40px;
+  padding: 40px 250px 40px 250px;
+  margin: 50px 20px 0px 20px !important;
+  color: #fff !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+// Use media queries for responsive adjustments
+@media (max-width: 768px) {
+  .footer-info-card {
+    padding: 15px; // Less padding on smaller devices
+    border-radius: 20px; // Smaller radius for smaller screens
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-info-card {
+    padding: 10px; // Minimal padding on very small devices
+  }
+}

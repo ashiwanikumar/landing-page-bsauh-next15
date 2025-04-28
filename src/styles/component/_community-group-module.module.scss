@@ -1,0 +1,84 @@
+// community-group-module.scss
+
+.group-preview {
+  background-color: #e2e8e3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin: 10px auto; // Adjusts for automatic margin alignment
+
+  max-width: calc(100% / 24 * 24); // Assuming each grid column is about 4.166% of the total width (100% / 24)
+  width: 100%; // Ensures it takes up the maximum width available
+
+  .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .twitter-card {
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 10px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          background-color: white;
+          margin-top: 20px;
+          text-align: center;
+
+          .twitter-timeline-container {
+              max-height: 400px; // Adjust height as needed
+              overflow-y: scroll;
+              border-radius: 4px;
+          }
+      }
+  }
+
+  .group-card-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 20px;
+
+      @media (max-width: 100px) {
+          flex-direction: column;
+          align-items: center;
+      }
+  }
+
+  .group-card {
+      flex-basis: calc(50% - 10px);
+      margin-top: 20px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+      border-radius: 10px;
+
+      h4 {
+          color: #0a236e;
+          margin-bottom: 15px;
+      }
+
+      p {
+          color: #666;
+          line-height: 1.6;
+          margin-bottom: 20px;
+      }
+
+      .know-more-btn {
+          background-color: #012c59a3;
+          color: #0aec0a;
+          padding: 10px 20px;
+          border-radius: 20px;
+          box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+          transition: transform 0.2s;
+          font-size: 16px;
+          font-weight: 500;
+          text-decoration: none;
+          cursor: pointer;
+
+          &:hover {
+              transform: scale(1.03);
+          }
+      }
+  }
+}

@@ -1,0 +1,487 @@
+// NotificationModal.module.scss
+
+// Variables
+$modal-border-radius: 16px;
+$modal-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+$animation-duration: 300ms;
+
+// Brand Colors
+$primary-dark: #336633;
+$primary-light: #99CC66;
+$primary-hover: #4a7f4a;
+
+// Notification Colors
+$success-color: #388e3c;
+$error-color: #d32f2f;
+$warning-color: #f57c00;
+$info-color: $primary-dark;
+
+// Overlay styling
+.wjoinnotification-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  backdrop-filter: blur(3px);
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $animation-duration ease, visibility $animation-duration ease;
+  
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  &.is-closing {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Modal card styling
+.wjoinnotification-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: $modal-border-radius;
+  box-shadow: $modal-shadow;
+  transform: translateY(20px);
+  opacity: 0;
+  overflow: hidden;
+  transition: transform $animation-duration ease, opacity $animation-duration ease;
+  border-top: 5px solid $primary-dark;
+  
+  &.is-open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  &.is-closing {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  &.success {
+    border-top-color: $success-color;
+  }
+  
+  &.error {
+    border-top-color: $error-color;
+  }
+  
+  &.warning {
+    border-top-color: $warning-color;
+  }
+  
+  &.info {
+    border-top-color: $primary-dark;
+  }
+
+  &.sending-mode {
+    .wjoinnotification-modal-icon-circle {
+      background-color: rgba($primary-dark, 0.1);
+    }
+  }
+}
+
+// Close button
+.wjoinnotification-modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  
+  &:hover {
+    background: #e5e5e5;
+    color: #333;
+  }
+}
+
+// Content styling
+.wjoinnotification-modal-content {
+  padding: 35px 25px 25px;
+  text-align: center;
+}
+
+// Header with icon
+.wjoinnotification-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wjoinnotification-modal-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #f0f7f0;
+  color: $primary-dark;
+  
+  &.success {
+    background-color: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+  
+  &.error {
+    background-color: rgba($error-color, 0.1);
+    color: $error-color;
+  }
+  
+  &.warning {
+    background-color: rgba($warning-color, 0.1);
+    color: $warning-color;
+  }
+  
+  &.info {
+    background-color: #f0f7f0;
+    color: $primary-dark;
+  }
+  
+  svg {
+    width: 36px;
+    height: 36px;
+    stroke-width: 2;
+  }
+
+  &.sending-animation {
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($primary-dark, 0.3);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba($primary-dark, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($primary-dark, 0);
+  }
+}
+
+.wjoinnotification-modal-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #223022;
+  line-height: 1.3;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.wjoinnotification-modal-body {
+  margin-bottom: 24px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #555;
+  
+  p {
+    margin: 0 0 10px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  ul {
+    text-align: left;
+    margin: 10px 0;
+    padding-left: 24px;
+    
+    li {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+// Action button
+.wjoinnotification-modal-action-button {
+  width: 100%;
+  padding: 14px 20px;
+  background-color: $primary-dark;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  &:hover {
+    background-color: $primary-hover;
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Progress bar
+.wjoinnotification-modal-progress-container {
+  margin-top: 24px;
+  
+  .wjoinnotification-modal-progress-bar {
+    height: 6px;
+    background-color: #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .wjoinnotification-modal-progress-fill {
+    height: 100%;
+    background: $primary-light;
+    transition: width 0.05s linear;
+  }
+  
+  .wjoinnotification-modal-countdown-text {
+    margin: 10px 0 0;
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+  }
+}
+
+// Loading spinner - Enhanced
+.wjoinnotification-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .wjoinnotification-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba($primary-dark, 0.2);
+    border-radius: 50%;
+    border-top-color: $primary-dark;
+    animation: spin 1s ease-in-out infinite;
+  }
+}
+
+// Enhanced sending spinner with larger size and better visibility
+.wjoinnotification-sending-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  .wjoinnotification-spinner-container {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    
+    .wjoinnotification-spinner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: 4px solid rgba($primary-dark, 0.2);
+      border-radius: 50%;
+      border-top-color: $primary-dark;
+      animation: sendingSpin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+  }
+}
+
+@keyframes sendingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wjoinnotification-loading-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  
+  .wjoinnotification-loading-spinner {
+    margin: 15px 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// OTP Countdown Timer
+.wjoinnotification-otp-timer-container {
+  margin: 20px auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wjoinnotification-otp-countdown-ring {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wjoinnotification-otp-countdown-background {
+    stroke: #e5e5e5;
+  }
+
+  .wjoinnotification-otp-countdown-progress {
+    stroke: $primary-light;
+    stroke-dasharray: 150.8; // 2πr where r=24
+    transition: stroke-dashoffset 1s linear;
+    animation: countdown 60s linear forwards;
+  }
+
+  .wjoinnotification-otp-countdown-seconds {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary-dark;
+    animation: countdownSeconds 60s linear forwards;
+  }
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 150.8;
+  }
+}
+
+@keyframes countdownSeconds {
+  0% { content: "60"; }
+  1.66% { content: "59"; }
+  3.33% { content: "58"; }
+  5% { content: "57"; }
+  6.66% { content: "56"; }
+  8.33% { content: "55"; }
+  10% { content: "54"; }
+  11.66% { content: "53"; }
+  13.33% { content: "52"; }
+  15% { content: "51"; }
+  16.66% { content: "50"; }
+  18.33% { content: "49"; }
+  20% { content: "48"; }
+  21.66% { content: "47"; }
+  23.33% { content: "46"; }
+  25% { content: "45"; }
+  26.66% { content: "44"; }
+  28.33% { content: "43"; }
+  30% { content: "42"; }
+  31.66% { content: "41"; }
+  33.33% { content: "40"; }
+  35% { content: "39"; }
+  36.66% { content: "38"; }
+  38.33% { content: "37"; }
+  40% { content: "36"; }
+  41.66% { content: "35"; }
+  43.33% { content: "34"; }
+  45% { content: "33"; }
+  46.66% { content: "32"; }
+  48.33% { content: "31"; }
+  50% { content: "30"; }
+  51.66% { content: "29"; }
+  53.33% { content: "28"; }
+  55% { content: "27"; }
+  56.66% { content: "26"; }
+  58.33% { content: "25"; }
+  60% { content: "24"; }
+  61.66% { content: "23"; }
+  63.33% { content: "22"; }
+  65% { content: "21"; }
+  66.66% { content: "20"; }
+  68.33% { content: "19"; }
+  70% { content: "18"; }
+  71.66% { content: "17"; }
+  73.33% { content: "16"; }
+  75% { content: "15"; }
+  76.66% { content: "14"; }
+  78.33% { content: "13"; }
+  80% { content: "12"; }
+  81.66% { content: "11"; }
+  83.33% { content: "10"; }
+  85% { content: "9"; }
+  86.66% { content: "8"; }
+  88.33% { content: "7"; }
+  90% { content: "6"; }
+  91.66% { content: "5"; }
+  93.33% { content: "4"; }
+  95% { content: "3"; }
+  96.66% { content: "2"; }
+  98.33% { content: "1"; }
+  100% { content: "0"; }
+}
+
+// Responsive styling
+@media (max-width: 576px) {
+  .wjoinnotification-modal-card {
+    max-width: 320px;
+  }
+  
+  .wjoinnotification-modal-content {
+    padding: 30px 20px 20px;
+  }
+  
+  .wjoinnotification-modal-icon-circle {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+    
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  .wjoinnotification-modal-title {
+    font-size: 24px;
+  }
+  
+  .wjoinnotification-modal-body {
+    font-size: 16px;
+  }
+  
+  .wjoinnotification-modal-action-button {
+    font-size: 16px;
+    padding: 13px 20px;
+  }
+} 

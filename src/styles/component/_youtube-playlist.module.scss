@@ -1,0 +1,60 @@
+// styles/youtube-playlist.scss
+
+.youtube-playlist {
+  .youtube-playlist-card {
+    margin-bottom: 20px; // Space between cards
+    border-radius: 10px; // Consistent with existing card styles
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; // Example shadow
+
+    .ant-card-cover img {
+      border-radius: 10px 10px 0 0; // Top corners rounded
+    }
+
+    &:hover {
+      transform: translateY(-5px); // Optional hover effect
+      box-shadow: rgb(38, 57, 77) 0px 25px 35px -10px;
+    }
+  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px; // Consistent spacing with the YouTube video card
+
+  .video-item {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    width: 100%;
+    max-width: 320px; // Adjust based on your layout
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: rgb(38, 57, 77) 0px 25px 35px -10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7); // Semi-transparent overlay
+      color: #fff;
+      padding: 10px;
+      margin: 0;
+      font-size: 16px; // Adjust as needed
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}

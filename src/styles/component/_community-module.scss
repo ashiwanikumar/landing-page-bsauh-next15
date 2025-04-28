@@ -1,0 +1,55 @@
+.categories-one {
+    .section-title {
+      // Styles for the section title
+    }
+  
+    .row-container {
+      // Styles for the row container
+    }
+  
+    .categories-one-item {
+      background-color: #e2e8e3;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+  
+      &__image {
+        border-radius: 15px;
+        overflow: hidden;
+        // Other styles...
+      }
+  
+      &__info {
+        text-align: center;
+        color: #666;
+        line-height: 1.6;
+        // Other styles...
+      }
+  
+      .community-card {
+        border-radius: 15px;
+        // Other styles...
+      }
+    }
+  
+    .view-all-link {
+      background-color: #012c59a3;
+      color: #0aec0a;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+      transition: transform 0.2s;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      text-align: center;
+      margin: 20px auto;
+  
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+  

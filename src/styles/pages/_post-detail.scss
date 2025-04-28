@@ -1,0 +1,163 @@
+.post-detail {
+  &-content {
+    margin-bottom: emCal(16, 50);
+
+    &__main {
+      .post-detail-title {
+        @include typo($fsz: emCal(16, 36), $lh: emCal(36, 48), $fw: 600);
+        margin-bottom: emCal(36, 10);
+      }
+      .post-detail-paragraph {
+        @include typo($lh: emCal(16, 30));
+        margin-bottom: emCal(16, 20);
+      }
+      .post-detail-subtitle {
+        @include typo($fsz: emCal(16, 24), $lh: emCal(24, 36), $fw: 600);
+        margin-bottom: emCal(24, 20);
+      }
+      .post-detail-image {
+        margin-bottom: emCal(16, 20);
+        img {
+          @include imgCenter;
+        }
+      }
+    }
+
+    .event-post-title {
+      padding: 12px;
+      background: linear-gradient(
+        45deg,
+        #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc
+      );
+      text-align: center;
+      font-size: 1.5em;
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: emCal(16, 20);
+      border-bottom: 1px solid setShadeColor(light);
+      margin-bottom: emCal(16, 30);
+      &-tags {
+        .ant-btn {
+          height: emCal(16, 30);
+          padding: 0 emCal(16, 10);
+          margin-right: emCal(16, 10);
+          border: 0;
+          background-color: setColor(light);
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+  &-comment {
+    &__title {
+      @include typo($fsz: emCal(16, 24), $color: setShadeColor(medium));
+      margin-bottom: emCal(24, 40);
+    }
+    &__new {
+      .ant-form {
+        color: red;
+        .ant-form-item {
+          &-control {
+            &-input {
+              &-content {
+                .ant-input {
+                  height: emCal(16, 45);
+                  border: 1px solid setShadeColor(light);
+                }
+                textarea.ant-input {
+                  height: emCal(16, 120);
+                  resize: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .ant-btn {
+        font-size: emCal(16, 14);
+        height: emCal(14, 45);
+        font-family: getFontWeight(600);
+        text-transform: uppercase;
+        padding: 0 emCal(14, 30);
+      }
+    }
+    &__item {
+      display: flex;
+      &-avatar {
+        margin-right: emCal(16, 30);
+        img {
+          @include imgCenter($height: emCal(16, 80), $width: emCal(16, 80));
+        }
+      }
+      &-content {
+        h5 {
+          @include typo($fsz: emCal(16, 14), $color: setShadeColor(regular));
+          letter-spacing: emCal(14, 2.4);
+          margin-bottom: emCal(14, 10);
+        }
+        h3 {
+          @include typo($fsz: emCal(16, 18), $fw: 600);
+          margin-bottom: emCal(18, 15);
+        }
+        p {
+          @include typo($lh: emCal(16, 24));
+          margin-bottom: emCal(16, 15);
+        }
+        &__button {
+          .ant-btn {
+            font-size: emCal(16, 13);
+            height: emCal(13, 30);
+            padding: 0 emCal(13, 15);
+            font-family: getFontWeight(600);
+            border-color: setShadeColor(regular);
+            text-transform: uppercase;
+            &:not(:last-child) {
+              margin-right: emCal(13, 5);
+            }
+          }
+        }
+        &__reply {
+          margin-top: emCal(16, 40);
+        }
+      }
+    }
+  }
+}
+
+
+.event-detail-back-button-container {
+  margin-bottom: 30px;
+  display: flex; // Aligns items in a row
+  align-items: center; // Vertically aligns items in the middle
+  justify-content: space-between; // Spaces out items to the start and end of the container
+  gap: 10px; // Adds some space between the ShareModal and the Button
+
+
+  button {
+    gap: 6px;
+    display: flex; // Ensures flexbox layout
+    align-items: center; // Vertically centers button contents
+    justify-content: center; 
+    background-color: #4caf50 !important;
+    padding: 0px 10px 0px 10px !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.2s ease-in-out !important;
+    cursor: pointer !important;
+
+    &:hover {
+      background-color: #66bb6a !important; // Lighter green on hover
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important; // Larger shadow on hover
+    }
+  }
+}

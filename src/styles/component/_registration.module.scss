@@ -1,0 +1,802 @@
+// _registration.scss
+// Variables
+$primary-dark: 
+#336633;
+$primary-light: 
+#99CC66;
+$primary-hover: 
+#4a7f4a;
+$secondary: 
+#e6f2d9;
+$text-dark: 
+#333333;
+$text-light: 
+#f7f7f7;
+$error: 
+#d32f2f;
+$success: 
+#388e3c;
+$border-radius: 8px;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// Remove global styles - they'll be moved to global.scss
+// Keep component-specific styles
+
+// Main container
+.wjoinregistration-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+// Header styles
+.wjoinregistration-page-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  
+}
+
+.wjoinregistration-whatsapp-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $primary-dark 0%, $primary-light 100%);
+  padding: 15px;
+  border-radius: $border-radius;
+  margin-bottom: 20px;
+
+  .wjoinregistration-registration-title {
+    margin-left: 15px;
+    color: $text-light;
+    font-size: 24px;
+  }
+}
+
+.wjoinregistration-support-email-section {
+  background-color: $secondary;
+  padding: 10px;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: 15px;
+
+  a {
+    color: $primary-dark;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Registration Form Container
+.wjoinregistration-registration-form-container {
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+// Stepper Styles
+.wjoinregistration-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: 
+#e0e0e0;
+    z-index: 1;
+  }
+
+  .wjoinregistration-step {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    z-index: 2;
+
+    .wjoinregistration-step-number {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: white;
+      border: 2px solid 
+#e0e0e0;
+      color: 
+#757575;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-weight: bold;
+      transition: $transition;
+    }
+
+    .wjoinregistration-step-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: 
+#757575;
+      transition: $transition;
+    }
+
+    &.active {
+      .wjoinregistration-step-number {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+        color: white;
+      }
+
+      .wjoinregistration-step-title {
+        color: $primary-dark;
+        font-weight: 600;
+      }
+    }
+
+    &.completed {
+      .wjoinregistration-step-number {
+        background-color: $primary-light;
+        border-color: $primary-light;
+        color: white;
+      }
+
+      .wjoinregistration-step-title {
+        color: $primary-light;
+      }
+    }
+  }
+}
+
+// Form Content
+.wjoinregistration-form-content {
+  min-height: 400px;
+  margin-bottom: 30px;
+}
+
+// Form Group Styles
+.wjoinregistration-form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+}
+
+.wjoinregistration-form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  font-size: 15px;
+  transition: $transition;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-dark;
+    box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+  }
+
+  &.error {
+    border-color: $error;
+  }
+}
+
+.wjoinregistration-error-text {
+  color: $error;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+// Select Dropdown
+.wjoinregistration-select-wrapper {
+  position: relative;
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: 
+#757575;
+  }
+
+  select.wjoinregistration-form-control {
+    appearance: none;
+    padding-right: 30px;
+    background-color: white;
+  }
+}
+
+// Radio & Checkbox
+.wjoinregistration-radio-group, .wjoinregistration-checkbox-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.wjoinregistration-radio-option, .wjoinregistration-checkbox-option {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 8px;
+  }
+}
+
+// Form Row (for side-by-side fields)
+.wjoinregistration-form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  .wjoinregistration-form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+// Form Section Title
+.wjoinregistration-form-section-title {
+  color: $primary-dark;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $secondary;
+}
+
+// Form Navigation
+.wjoinregistration-form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+// Buttons
+%button-base {
+  padding: 12px 24px;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.wjoinregistration-btn-primary {
+  @extend %button-base;
+  background-color: $primary-dark;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+  }
+}
+
+.wjoinregistration-btn-secondary {
+  @extend %button-base;
+  background-color: 
+#f5f5f5;
+  color: $text-dark;
+
+  &:hover:not(:disabled) {
+    background-color: 
+#e8e8e8;
+  }
+}
+
+.wjoinregistration-btn-submit {
+  @extend %button-base;
+  background-color: $primary-dark;
+  color: white;
+  padding: 12px 30px;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+  }
+}
+
+// Error Message
+.wjoinregistration-error-message {
+  background-color: rgba(211, 47, 47, 0.1);
+  color: $error;
+  padding: 12px;
+  border-radius: $border-radius;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+// Info box styles
+.wjoinregistration-info-box {
+  background-color: $secondary;
+  padding: 15px;
+  border-radius: $border-radius;
+  margin-bottom: 20px;
+
+  h3 {
+    margin-bottom: 10px;
+    color: $primary-dark;
+  }
+
+  .wjoinregistration-info-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Authentication Step Styles
+.wjoinregistration-auth-options {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+
+  .wjoinregistration-auth-option {
+    flex: 1;
+    padding: 30px;
+    border-radius: $border-radius;
+    background-color: white;
+    box-shadow: $shadow;
+    text-align: center;
+    transition: $transition;
+
+    .wjoinregistration-auth-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+
+      &.wjoinregistration-google-icon {
+        background-color: 
+#ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      &.wjoinregistration-email-icon {
+        background-color: $secondary;
+      }
+    }
+  }
+}
+
+.wjoinregistration-divider {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid 
+#e0e0e0;
+  }
+
+  span {
+    padding: 0 15px;
+    color: 
+#757575;
+  }
+}
+
+// OTP Input
+.wjoinregistration-otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+
+  .wjoinregistration-otp-input {
+    width: 50px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    background-color: white;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-dark;
+      box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+    }
+  }
+}
+
+.wjoinregistration-otp-timer {
+  text-align: center;
+  margin-top: 15px;
+  color: 
+#757575;
+  font-size: 14px;
+}
+
+.wjoinregistration-resend-otp {
+  color: $primary-dark;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+// Success Message
+.wjoinregistration-success-message-container {
+  text-align: center;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  padding: 50px 30px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .wjoinregistration-success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: $success;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 40px;
+  }
+
+  .wjoinregistration-success-title {
+    color: $success;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .wjoinregistration-success-text {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: $text-dark;
+  }
+
+  .wjoinregistration-success-info {
+    background-color: $secondary;
+    padding: 20px;
+    border-radius: $border-radius;
+    margin-bottom: 30px;
+    text-align: left;
+
+    .wjoinregistration-info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .wjoinregistration-info-item-icon {
+        margin-right: 15px;
+        font-size: 20px;
+        color: $primary-dark;
+      }
+    }
+  }
+
+  .wjoinregistration-auto-close {
+    margin-top: 30px;
+    color: 
+#757575;
+    font-size: 14px;
+
+    .wjoinregistration-progress-bar {
+      height: 6px;
+      background-color: 
+#e0e0e0;
+      border-radius: 3px;
+      margin: 10px auto;
+      max-width: 300px;
+      overflow: hidden;
+
+      .wjoinregistration-progress-bar-fill {
+        height: 100%;
+        background-color: $primary-dark;
+        border-radius: 3px;
+        width: 0;
+        transition: width 0.1s linear;
+      }
+    }
+  }
+}
+
+// Modal styles
+.wjoinregistration-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.wjoinregistration-modal-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wjoinregistration-modal-content {
+  padding: 25px;
+
+  &.wjoinregistration-modal-success {
+    border-top: 5px solid $success;
+  }
+
+  &.wjoinregistration-modal-error {
+    border-top: 5px solid $error;
+  }
+
+  &.wjoinregistration-modal-warning {
+    border-top: 5px solid 
+#ff9800;
+  }
+
+  &.wjoinregistration-modal-info {
+    border-top: 5px solid 
+#2196f3;
+  }
+}
+
+.wjoinregistration-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+
+  .wjoinregistration-modal-icon {
+    margin-bottom: 15px;
+  }
+
+  .wjoinregistration-modal-title {
+    font-size: 22px;
+    margin: 0;
+  }
+}
+
+.wjoinregistration-modal-body {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wjoinregistration-modal-footer {
+  display: flex;
+  justify-content: center;
+
+  button {
+    min-width: 120px;
+  }
+}
+
+// Custom Phone Input with Prefix Inside
+.wjoinregistration-phone-input-wrapper {
+  width: 100%;
+
+  .wjoinregistration-phone-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: $transition;
+    background-color: white;
+
+    &:focus-within {
+      border-color: $primary-dark;
+      box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+    }
+
+    &.error {
+      border-color: $error;
+    }
+
+    .wjoinregistration-phone-prefix {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      min-width: 40px;
+      height: 100%;
+      background-color: #f0f7f0;  // Light green background
+      color: #333;
+      font-weight: bold;
+      border-right: 1px solid #ddd;
+    }
+
+    .wjoinregistration-phone-number-input {
+      flex: 1;
+      height: 100%;
+      padding: 0 15px;
+      border: none;
+      font-size: 15px;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+  }
+}
+
+// WhatsApp Number Input with Country Code and Prefix
+.wjoinregistration-whatsapp-input-wrapper {
+  width: 100%;
+
+  .wjoinregistration-whatsapp-input {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: $transition;
+    background-color: white;
+
+    &:focus-within {
+      border-color: $primary-dark;
+      box-shadow: 0 0 0 2px rgba(51, 102, 51, 0.2);
+    }
+
+    &.error {
+      border-color: $error;
+    }
+
+    .wjoinregistration-whatsapp-country-code {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      min-width: 50px;
+      height: 100%;
+      background-color: #f5f5f5;
+      color: #333;
+      font-weight: 600;
+      border-right: 1px solid #ddd;
+    }
+
+    .wjoinregistration-whatsapp-prefix-wrapper {
+      position: relative;
+      width: 70px;
+      height: 100%;
+      border-right: 1px solid #ddd;
+      
+      &::after {
+        content: "▼";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 10px;
+        color: #757575;
+      }
+
+      .wjoinregistration-whatsapp-prefix-select {
+        width: 100%;
+        height: 100%;
+        padding: 0 25px 0 10px;
+        border: none;
+        appearance: none;
+        background-color: transparent;
+        font-weight: 500;
+        cursor: pointer;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .wjoinregistration-whatsapp-number-input {
+      flex: 1;
+      height: 100%;
+      padding: 0 15px;
+      border: none;
+      font-size: 15px;
+      
+      &:focus {
+        outline: none;
+      }
+      
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .wjoinregistration-auth-options {
+    flex-direction: column;
+  }
+
+  .wjoinregistration-form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wjoinregistration-stepper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    &::before {
+      display: none;
+    }
+
+    .wjoinregistration-step {
+      flex: 0 0 calc(33.333% - 20px);
+      margin-bottom: 20px;
+    }
+  }
+
+  .wjoinregistration-registration-title {
+    font-size: 20px;
+  }
+
+  .wjoinregistration-registration-form-container {
+    padding: 20px;
+  }
+}

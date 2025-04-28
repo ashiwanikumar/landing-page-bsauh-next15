@@ -1,0 +1,122 @@
+/* Base styles for newsletter subscription form */
+.newsletter-page-newsletter {
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.newsletter-box-card,
+.newsletter-text-card {
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 20px 30px -10px rgb(38, 57, 77);
+  
+  @media (max-width: 768px) {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Styles for the custom modal and overlay */
+.newsletter-custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // Dark overlay
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050; // Ensures it's above other content
+}
+
+.custom-modal-newsletter {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px; // Adjust based on your content size
+  width: 90%; // Ensures some margin on smaller screens
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; // Needed for any positioning of close button or other elements inside
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: auto;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-button-newsletter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none; // Remove border if preferred
+  background: none; // Remove background if preferred
+  cursor: pointer;
+}
+
+
+/* Fullscreen loader styling */
+.fullscreen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* High z-index to cover content */
+}
+
+.loader-spinner {
+  border: 4px solid #f3f3f3; /* Light gray border */
+  border-radius: 50%;
+  border-top: 4px solid #3498db; /* Blue border for spinner */
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Center alignment for the subscription button */
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ant-row .ant-col {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .ant-col-6, .ant-col-12, .ant-col-24 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,102 @@
+.event-webinar-preview {
+    background-color: #e2e8e3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cards-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-top: 20px;
+        width: 100%;
+  
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+  
+  
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  
+    .group-card {
+      background-color: white;
+      padding: 15px;
+      margin-top: 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+    //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    text-align: center;
+      max-width: 300px;
+
+      @media (max-width: 768px) {
+        margin: 10px 0; // Adjust for mobile view
+      }
+      
+      h4 {
+        color: #0a236e;
+        margin-bottom: 15px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .know-more-btn {
+        background-color: #012c59a3;
+        color: #0aec0a;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        transition: transform 0.2s;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+
+    .view-more-button {
+        background-color: #012c59a3;
+        color: #0aec0a;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: rgba(46, 240, 127, 0.4) 5px 5px, rgba(53, 240, 46, 0.3) 10px 10px, rgba(46, 217, 240, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        transition: transform 0.2s;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        margin: 40px 0 10px 0;
+        cursor: pointer;
+    
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+}
+

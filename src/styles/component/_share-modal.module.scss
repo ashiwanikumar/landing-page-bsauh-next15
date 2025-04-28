@@ -1,0 +1,146 @@
+.share-option-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 15px; // Provide space between items
+
+  .icon {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    // transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ececec; // Hover effect
+    }
+
+    svg {
+      height: 24px; // Adjust SVG size
+      width: 24px;
+    }
+  }
+
+  span {
+    font-size: 14px; // Adjust font size for better readability
+  }
+}
+
+// Adjust button sizes for mobile screens
+@media (max-width: 500px) {
+  .share-option-icon .icon {
+    height: 35px;
+    width: 35px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .share-option-icon span {
+    font-size: 12px;
+  }
+}
+
+
+.share-option-icon .icon {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  text-align: center !important;
+  margin-left: 47px;
+  background-color: #f0f0f0;
+}
+
+.share-option-icon .icon:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.share-option-icon i {
+  font-size: 35px;
+}
+.share-option-icon a {
+  transition: color 0.5s ease;
+  color: #1f1f1f;
+}
+.share-option-icon a:hover {
+  color: #084680;
+}
+
+.share-option-icon span {
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.left-icon {
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  left: 5px;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+.right-icon {
+  font-size: 14px;
+  position: absolute;
+  top: 30%;
+  right: 5px;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.share-copy-input {
+  padding: 20px;
+}
+
+.share-copy-input .input {
+  padding: 10px;
+}
+
+.share-copy-input .copy-btn {
+  background-color: #084680;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.share-btn {
+  border-radius: 15px;
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  border: none;
+  padding: 2px 2px 2px 2px !important;
+}
+
+.share-btn:hover {
+  background-color: #0bc837;
+}
+
+.slick-slide.slick-current {
+  animation: none !important;
+}
+
+.slick-slide:not(.slick-current) {
+  animation: none !important;
+}

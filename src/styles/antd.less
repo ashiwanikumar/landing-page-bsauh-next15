@@ -1,0 +1,146 @@
+// Ant Design v5 customization for Next.js 14
+
+// Import only the Ant Design base styles instead of the full less files
+@import 'antd/es/style/themes/default.less';
+@import 'antd/es/style/core/index.less';
+
+// Define custom variables
+@primary-color: #084680;
+@font-family: "Roboto", sans-serif;
+@font-size-base: 16px;
+@text-selection-bg: #255a4f;
+@rate-star-color: #efb11c;
+@rate-star-size: 14px;
+@zindex-tooltip: 99;
+@form-item-margin-bottom: 30px;
+
+.ant-select-focused .ant-select-selector,
+.ant-select-selector:focus,
+.ant-select-selector:active,
+.ant-select-open .ant-select-selector,
+.ant-input-affix-wrapper-focused {
+  box-shadow: none !important;
+}
+
+.ant-tooltip-inner {
+  font-size: 14px;
+}
+
+.ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+  max-width: 80vw;
+}
+
+.ant-select-item-option-content,
+.ant-select-selection-item {
+  text-transform: capitalize;
+}
+
+.ant-select-item-option-content i,
+.ant-breadcrumb .ant-breadcrumb-link i {
+  margin-right: 10px;
+}
+
+.ant-back-top {
+  right: 50px;
+}
+
+.ant-message {
+  bottom: 20px;
+  top: initial;
+}
+
+.ant-message-notice {
+  text-align: left;
+}
+
+.ant-rate-star:not(:last-child) {
+  margin-right: 2px;
+}
+
+input:focus {
+  box-shadow: none !important;
+}
+
+.ant-modal {
+  max-width: 90vw;
+}
+
+.ant-btn-primary,
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: var(--green-color);
+  border-color: var(--green-color);
+  opacity: 0.8;
+}
+
+.ant-breadcrumb {
+  margin-bottom: 30/16em;
+}
+
+.ant-breadcrumb .ant-breadcrumb-link {
+  font-family: "Roboto Bold";
+}
+
+// Gradient Text
+.rainbow {
+  background: linear-gradient(to right, #08ca3f, #0f130c, #49924d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// Sticky Social Media Icons
+.sticky-container {
+  padding: 10px;
+  margin: 0px;
+  position: fixed;
+  right: -153px;
+  top: 35%;
+  width: 210px;
+  z-index: 1100;
+}
+
+.sticky li {
+  list-style-type: none;
+  background: transparent;
+  color: #efefef;
+  height: 30px;
+  padding: 0px;
+  margin: 0px 0px 12px 0px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.sticky li:hover {
+  margin-left: -15px;
+}
+
+.sticky li img {
+  float: left;
+  margin: 5px 4px;
+  margin-right: 5px;
+}
+
+.sticky li p {
+  padding-top: 5px;
+  margin: 0px;
+  line-height: 16px;
+  font-size: 11px;
+}
+
+.sticky li p a {
+  text-decoration: none;
+  color: #2C3539;
+}
+
+.sticky li p a:hover {
+  text-decoration: underline;
+}

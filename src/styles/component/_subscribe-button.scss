@@ -1,0 +1,30 @@
+.subscribe-button {
+    background-color: #31a936; /* Vibrant blue */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 12px 24px; /* Sufficient padding for a good touch area */
+    font-size: 18px; /* Visible and legible font size */
+    font-weight: 600; /* Bold for emphasis */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Indicates it's clickable */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Align text vertically */
+    justify-content: center; /* Center text horizontally */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+    &:hover {
+      background-color: #40a9ff; /* Lighter blue on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+    }
+
+    &:focus {
+      outline: none; /* No outline on focus */
+      box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.5); /* Focused state shadow */
+    }
+
+    &:active {
+      background-color: #0056b3; /* Darker blue when pressed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow for a pressed effect */
+    }
+}

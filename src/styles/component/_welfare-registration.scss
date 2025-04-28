@@ -1,0 +1,342 @@
+// _welfare-registration.scss
+
+// Main Container
+.welfare-registration {
+  &-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    // Animation for step transitions
+    .step-content {
+      opacity: 0;
+      transform: translateX(20px);
+      animation: welfare-fade-slide-in 0.3s ease forwards;
+    }
+
+    @keyframes welfare-fade-slide-in {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // Steps styling
+  &-steps {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+
+    .ant-steps-item {
+      &-icon {
+        background: #fff;
+        border-color: #1890ff;
+        transition: all 0.3s ease;
+
+        .ant-steps-icon {
+          color: #1890ff;
+          font-weight: 500;
+        }
+      }
+
+      &-process .ant-steps-item-icon {
+        background: #1890ff;
+        .ant-steps-icon {
+          color: #fff;
+        }
+      }
+
+      &-finish {
+        .ant-steps-item-icon {
+          background: #fff;
+          border-color: #52c41a;
+          .ant-steps-icon {
+            color: #52c41a;
+          }
+        }
+        .ant-steps-item-tail::after {
+          background-color: #52c41a;
+        }
+      }
+
+      &-title {
+        transition: color 0.3s ease;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Form sections
+  &-section {
+    margin-bottom: 2rem;
+
+    &--personal,
+    &--location,
+    &--case {
+      .ant-form-item {
+        margin-bottom: 24px;
+
+        &-label {
+          label {
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+
+        &-explain-error {
+          font-size: 12px;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+  // Form inputs
+  &-input {
+    &--base {
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      transition: all 0.3s ease;
+      height: 40px;
+      padding: 8px 12px;
+
+      &:hover {
+        border-color: #40a9ff;
+      }
+
+      &:focus,
+      &-focused {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+      }
+    }
+
+    &--textarea {
+      textarea {
+        border-radius: 6px;
+        min-height: 120px;
+        padding: 12px;
+      }
+    }
+
+    &--error {
+      border-color: #ff4d4f;
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+      }
+    }
+  }
+
+  // Document upload area
+  &-upload {
+    &-area {
+      border: 2px dashed #d9d9d9;
+      border-radius: 8px;
+      background: #fafafa;
+      transition: all 0.3s ease;
+      padding: 24px;
+
+      &:hover,
+      &.dragover {
+        border-color: #40a9ff;
+        background: #e6f7ff;
+      }
+    }
+
+    &-icon {
+      color: #40a9ff;
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    &-hint {
+      color: #666;
+      font-size: 13px;
+    }
+
+    &-list {
+      margin-top: 16px;
+
+      &-item {
+        margin: 8px 0;
+        padding: 8px;
+        border-radius: 4px;
+        background: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--uploading {
+          color: #1890ff;
+        }
+
+        &--success {
+          color: #52c41a;
+        }
+
+        &--error {
+          color: #ff4d4f;
+        }
+      }
+    }
+  }
+
+  // Form actions
+  &-actions {
+    margin-top: 24px;
+    padding: 1rem;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+
+    &--right {
+      margin-left: auto;
+    }
+
+    .ant-btn {
+      min-width: 100px;
+      height: 40px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+
+      & + .ant-btn {
+        margin-left: 12px;
+      }
+
+      &-default {
+        &:hover {
+          border-color: #40a9ff;
+          color: #40a9ff;
+        }
+      }
+
+      &-primary {
+        background: #1890ff;
+        border-color: #1890ff;
+        
+        &:hover {
+          background: #40a9ff;
+          border-color: #40a9ff;
+        }
+
+        &:active {
+          background: #096dd9;
+          border-color: #096dd9;
+        }
+
+        &[disabled] {
+          background: #f5f5f5;
+          border-color: #d9d9d9;
+          color: rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+  }
+
+  // Success modal
+  &-success {
+    &-modal {
+      text-align: center;
+      padding: 24px;
+
+      &-icon {
+        font-size: 48px;
+        color: #52c41a;
+        margin-bottom: 16px;
+      }
+
+      &-title {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      &-message {
+        color: #666;
+        margin-bottom: 24px;
+      }
+
+      &-reference {
+        background: #f5f5f5;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+
+        &-label {
+          color: #666;
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+
+        &-number {
+          font-size: 24px;
+          font-family: monospace;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  // Alerts and notices
+  &-alert {
+    margin-bottom: 24px;
+    border-radius: 6px;
+
+    &-info {
+      background-color: #e6f7ff;
+      border: 1px solid #91d5ff;
+    }
+
+    &-warning {
+      background-color: #fffbe6;
+      border: 1px solid #ffe58f;
+    }
+  }
+
+  // Mobile responsiveness
+  @media (max-width: 768px) {
+    &-form {
+      margin: 1rem;
+      padding: 1rem;
+    }
+
+    &-steps {
+      .ant-steps-item-title {
+        font-size: 13px;
+      }
+    }
+
+    &-actions {
+      flex-direction: column;
+      gap: 12px;
+
+      .ant-btn {
+        width: 100%;
+        margin-left: 0 !important;
+      }
+    }
+
+    &-success-modal {
+      padding: 16px;
+
+      &-reference {
+        padding: 12px;
+      }
+    }
+  }
+}

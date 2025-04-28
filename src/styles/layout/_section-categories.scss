@@ -1,0 +1,71 @@
+.categories-one {
+  margin-bottom: $section-spacing;
+  background-color: #e2e8e3; // Light background color
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin: 100px 0 100px 0;
+  .categories-one-item {
+    display: block;
+    text-align: center;
+    // border: 1px solid #d0faa3;
+    padding: emCal(16, 30) emCal(16, 10);
+    margin: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 20px;
+    .categories-one-item__image {
+      position: relative;
+      display: inline-block;
+      margin-bottom: emCal(16, 30);
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: emCal(16, 200);
+        font-family: getFontWeight(600);
+        color: #eaf5e4;
+        line-height: emCal(200, 150);
+        z-index: -1;
+      }
+      img {
+        @include imgCenter(
+          $height: emCal(16, 150),
+          $width: emCal(16, 150),
+          $type: contain
+        );
+      }
+    }
+    h2 {
+      @include typo($fsz: emCal(16, 24), $fw: 600);
+      margin-bottom: emCal(24, 10);
+    }
+    p {
+      @include typo($fsz: emCal(16, 12), $color: setColor(rgb(15, 14, 15)), $fw: 500);
+    }
+  }
+  .community-card {
+    background-color: #f0e4d7; // Example background color
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+    }
+  }
+}
+
+.reviewer-name {
+  color: rgb(1, 1, 17)
+}
+

@@ -1,0 +1,36 @@
+{
+  "skills": {
+    "acting": {
+      "genres": ["Theater", "Film", "Voice Acting", "Other"],
+      "skill level": "Expert"
+    },
+    "dance": {
+      "genres": ["Ballet", "Hip-Hop", "Contemporary", "Other"],
+      "skill level": "Intermediate"
+    },
+    "drama": {
+      "types": ["Stage Drama", "Screen Drama", "Radio Drama", "Other"],
+      "skill level": "Intermediate"
+    },
+    "painting": {
+      "styles": ["Oil", "Acrylic", "Watercolor", "Digital", "Other"],
+      "skill level": "Advanced"
+    },
+    "playing musical instrument": {
+      "instruments": ["Piano", "Guitar", "Violin", "Drums", "Other"],
+      "skill level": "Expert"
+    },
+    "poetry": {
+      "forms": ["Sonnet", "Haiku", "Free Verse", "Limerick", "Other"],
+      "skill level": "Advanced"
+    },
+    "singing": {
+      "genres": ["Classical", "Pop", "Rock", "Jazz", "Other"],
+      "skill level": "Advanced"
+    },
+    "writing": {
+      "genres": ["Fiction", "Non-fiction", "Technical", "Academic", "Other"],
+      "skill level": "Expert"
+    }
+  }
+}

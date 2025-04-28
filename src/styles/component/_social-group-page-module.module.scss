@@ -1,0 +1,192 @@
+// _social-group-page-module.scss
+
+.social-custom-card {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.youtube-card {
+  position: relative;
+  border-radius: 10px;
+  box-shadow: rgb(3, 18, 6) 0px 20px 30px -10px;
+  padding-top: 56.25%; // Aspect ratio for 16:9 videos
+  height: 0; // Collapse the card to the size of its content
+  overflow: hidden;
+}
+
+
+
+  .react-player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+// New enhancements
+.social-custom-card {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.youtube-card-container {
+  margin-top: 2000px;
+
+  .youtube-card {
+    border-radius: 10px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+}
+
+.social-media-card {
+  display: flex;
+  flex-direction: column;
+  height: 400px; // Set a fixed height for the card
+  overflow: hidden; // Hide overflow
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 10px;
+  background-size: 200% 200%; // Required for gradient animation
+  animation: gradient 15s ease infinite; // Adjust duration as needed
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: rgb(38, 57, 77) 0px 25px 35px -10px;
+    z-index: 10;
+  }
+
+  .card-content {
+    flex-grow: 1; // Allow the content to fill the available space
+    overflow-y: auto; // Enable vertical scrolling
+  }
+}
+
+
+
+.social-media-title {
+  padding: 12px;
+  background: linear-gradient(
+    45deg,
+    #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc
+  );
+  text-align: center;
+  font-size: 1.5em; // Adjust as needed
+  color: white; // Adjust color as needed
+  border-radius: 8px 8px 0 0;
+}
+
+.twitter-page-card {
+  height: 400px; /* Adjust this height based on your design needs */
+  overflow-y: auto; /* Enable vertical scrolling within the card */
+  .twitter-timeline {
+    min-height: 100%; /* Ensure the timeline fills the card */
+  }
+}
+
+
+// Apply a consistent color scheme (modify with your brand color)
+.ant-card-head {
+  background-color: green($color: #000000); // Replace with your desired color
+  color: rgb(143, 27, 27);
+
+  .ant-card-head-title {
+    color: rgb(10, 10, 13); // Ensure the title color is also white
+  }
+}
+
+// Add a custom class for card header styling
+.social-custom-card-header {
+  background-color: green($color: #000000); // Replace with your brand color
+  color: rgb(42, 204, 115);
+
+  .social-custom-card-title {
+    color: rgb(31, 216, 124); // Ensure title color is white
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .social-custom-card, .youtube-card-container {
+    margin-top: 50px;
+  }
+}
+
+.social-media-action-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff; // Example color
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: darken(#007bff, 10%);
+  }
+}
+
+
+// Common styles for all QR code cards
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.qr-code-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 10px;
+  background-size: 200% 200%; // Required for gradient animation
+  animation: gradient 15s ease infinite; // Adjust duration as needed
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: rgb(38, 57, 77) 0px 25px 35px -10px;
+    z-index: 10;
+  }
+}
+
+.qr-code-title {
+  padding: 12px;
+  background: linear-gradient(
+    45deg,
+    #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc
+  );
+  text-align: center;
+  font-size: 1.5em; // Adjust as needed
+  color: white; // Adjust color as needed
+  border-radius: 8px 8px 0 0;
+}
+
+// Facebook gradient
+.facebook-card {
+  background: linear-gradient(45deg, #3b5998, #8b9dc3);
+}
+
+// Instagram gradient
+.instagram-card {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+// LinkedIn gradient
+.linkedin-card {
+  background: linear-gradient(45deg, #0077b5, #00a0dc);
+}
+
+// Twitter gradient
+.twitter-card {
+  background: linear-gradient(45deg, #1DA1F2, #0099cc);
+}
+
+// Add more platform-specific classes as needed...

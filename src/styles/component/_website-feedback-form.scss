@@ -1,0 +1,65 @@
+.website-feedback-form {
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  
+  // Adjusting form padding and layout on smaller screens
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.form-box-card {
+  padding: 10px;
+  margin-bottom: 50px;
+  border-radius: 4px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: #fff;
+
+  // Making adjustments for smaller screens
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+    padding: 5px;
+  }
+}
+
+.form-field-card, .form-text-card {
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  background-color: #fff;
+
+  // Consistent adjustments for smaller screens
+  @media (max-width: 768px) {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.form-submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.submission-success-message {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #4BB543; // Feel free to adjust the color
+}
+
+// Adjusting grid layout for smaller screens
+@media (max-width: 768px) {
+  .ant-row .ant-col {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .ant-col-6, .ant-col-12, .ant-col-24 {
+    // Make all columns stack vertically on small screens
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

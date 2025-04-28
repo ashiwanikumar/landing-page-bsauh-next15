@@ -1,0 +1,185 @@
+.event-registration-card {
+  border-radius: 25px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  padding: 30px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .event-details {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 20px;
+      text-align: left;
+    }
+    img.event-cover-image {
+      width: 100%;
+      max-width: 300px; // Reduced maximum width to 300px
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0 auto; // Keeps the image centered within its container
+    }
+    
+
+    h2.event-title {
+      font-weight: bold;
+    }
+
+    .event-location, .event-date, .event-description {
+      color: rgb(0, 0, 0);
+    }
+  }
+
+
+  .divider {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      width: 1px;
+      background-color: #ddd;
+      margin: 0 15px;
+      height: auto;
+      flex-grow: 1;
+    }
+  }
+
+  .apply-card {
+    width: 100%;
+  }
+}
+
+.event-info-mess {
+  background-color: white; // Adjust the background color as needed
+  border-radius: 10px; // Rounded corners
+  color: black;
+  padding: 20px; // Internal padding
+  margin-top: 20px; // Spacing from the form
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.event-join-info {
+  list-style: disc inside; // Adjusts the list style to default bullets
+  padding: 0;
+  margin-left: 20px; 
+
+  li {
+    display: flex;
+    align-items: center;
+    font-size: 16px; // Adjust the font size as needed
+    margin-bottom: 10px; // Spacing between list items
+
+    &:nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // Spaces out text and button
+      list-style: none; // Removes bullet point for this specific item
+
+      a {
+        margin-left: 5px;
+        color: #007bff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .join-community-button {
+        // Styles for your join button
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#4caf50, 10%);
+        }
+      }
+    }
+
+    
+
+    &::before {
+      content: '➤'; // Unicode for arrow. Can be replaced with bullet or other symbols
+      color: #007bff; // Color of the arrow/bullet
+      font-weight: bold;
+      margin-right: 10px; // Spacing between bullet and text
+    }
+
+    a {
+      margin-left: 5px; // Adjust spacing between link and text
+      color: #007bff;
+      &:hover {
+        text-decoration: underline;
+        
+      }
+    }
+  }
+}
+
+.event-details-card {
+  background-color: white; // White background for the card
+  border-radius: 15px; // Rounded corners for the card
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  padding: 20px; // Internal padding
+  margin: 20px 0; // Vertical spacing
+  color: #333; // Dark text color for readability
+  text-align: center; // Center align the text
+
+  .icon-align {
+    margin-right: 8px; // Space between icon and text
+    color: #58c8ae; // Color to match the theme
+    vertical-align: middle; // Align icon with text
+  }
+
+  .event-title {
+    font-size: 24px; // Larger font size for title
+    font-weight: bold; // Bold font weight for title
+    margin-bottom: 15px; // Space below title
+  }
+
+  .event-location, .event-date, .event-description {
+    font-size: 16px; // Readable font size for details
+    margin-bottom: 10px; // Space between each detail
+  }
+}
+
+
+.read-more-link {
+  color: #007bff; // Example: use your theme color here
+  text-decoration: none;
+  display: block; // Ensure the link is on a new line
+  margin-top: 10px;
+}
+
+
+.registration-form {
+  background-color: #f7f7f7; // Slightly different background for contrast
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+  .form-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin-bottom: 20px;
+  }
+  
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+}

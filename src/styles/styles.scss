@@ -1,0 +1,173 @@
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/container";
+@import "base/font-family";
+@import "base/reset";
+@import "base/root";
+@import "base/ui";
+
+@import "component/blog-sidebar";
+@import "component/cookie-banner";
+@import "component/cookie-square";
+@import "component/header-category-collapse";
+@import "component/header-function-items";
+@import "component/header-navigation";
+@import "component/header-search-form";
+@import "component/pagination";
+@import "component/post";
+@import "component/section-title";
+@import "component/shop-sidebar";
+@import "component/social-icons";
+@import "component/share-modal";
+@import "component/privacy-policy";
+@import "component/_announcement-card";
+@import "component/_announcement-bar-module";
+@import "component/_non-profit-preview";
+@import "component/_community-module";
+@import "component/_group-preview";
+@import "component/_event-webinar-preview";
+@import "component/_community-group-module";
+@import "component/_social-community-group-module";
+@import "component/_social-group-page-module";
+@import "component/_custom-modal-overlay";
+@import "component/_youtube-playlist";
+@import "component/_instagram-gallery";
+@import "component/_cancel-registration";
+@import "component/website-feedback-form";
+@import "component/_sitemap";
+@import "component/_newsletter-page";
+@import "component/_error-modal";
+@import "component/talent-registration";
+@import "component/event-gallery";
+@import "component/event";
+@import "component/_support";
+@import "component/_event-payment";
+@import "component/testimonial-area";
+@import "component/_event-register-module";
+@import "component/_subscribe-button";
+@import "component/_unsubscribe-component";
+@import "component/welfare-registration";
+@import "component/facebook-post-embed";
+
+
+
+@import "layout/banner";
+@import "layout/blog";
+@import "layout/event";
+@import "layout/event-post-detail-layout";
+@import "layout/footer";
+@import "layout/newfooter";
+@import "layout/function-menu";
+@import "layout/header";
+@import "layout/hero-slider";
+@import "layout/introduction";
+@import "layout/menu";
+@import "layout/testimonial";
+@import "layout/top-nav";
+@import "layout/bg-animation";
+@import "layout/section-categories";
+
+
+@import "pages/home";
+@import "pages/about";
+@import "pages/auth";
+@import "pages/events";
+@import "pages/blog";
+@import "pages/community";
+@import "pages/community-slug";
+@import "pages/eventForm";
+@import "pages/eventRegistrationForm";
+@import "pages/coming-soon";
+@import "pages/error";
+@import "pages/post-detail";
+@import "pages/bubbleAnimation";
+@import "pages/do-not-sell";
+@import "pages/leadership-team";
+@import "pages/member-feedback";
+@import "pages/partners";
+@import "pages/unsubscribe";
+@import "pages/welfare";
+@import "pages/gallery";
+@import "pages/linkedin";
+
+
+
+
+body {
+  font-family: 'Hind', sans-serif;
+  /* Fallback to a generic sans-serif if Hind is not available */
+}
+
+
+/* Fresh Dairy Inspired Gradient Animation */
+.dairyFreshGradient {
+  background: linear-gradient(-45deg, #ffffff, #ffebd8, #fff0e1, #e9f2f9);
+  background-size: 500% 500%;
+  animation: freshDairyFlow 12s ease infinite;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow for a soft look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transitions */
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Gentle hover effect */
+.dairyFreshGradient:hover {
+  transform: scale(1.02);
+  /* Minor enlargement on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.07);
+  /* Enhanced shadow on hover */
+}
+
+/* Add this CSS in your stylesheet or style section */
+.custom-card {
+  padding: 16px;
+  /* Adjust padding as needed */
+  border-radius: 5px;
+  /* Add border-radius for rounded corners (optional) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow (optional) */
+}
+
+.ant-modal-body {
+  padding: 0px;
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.explore-button {
+  background-color: #FFFDF0; // Creamy white
+  transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
+
+  &:hover {
+    background-color: #FFE085;
+    letter-spacing: 6px !important;
+    transform: translateY(4px); // Dip effect
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(6px); // Deeper dip when clicked
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}

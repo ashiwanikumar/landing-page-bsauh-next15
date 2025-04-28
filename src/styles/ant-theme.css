@@ -1,0 +1,147 @@
+/* Ant Design v5 Theming with CSS variables */
+:root {
+  --primary-color: #084680;
+  --font-family: "Roboto", sans-serif;
+  --font-size-base: 16px;
+  
+  /* Ant Design v5 CSS variables */
+  --ant-primary-color: var(--primary-color);
+  --ant-primary-color-hover: color-mix(in srgb, var(--primary-color), white 10%);
+  --ant-font-family: var(--font-family);
+  --ant-font-size-base: var(--font-size-base);
+  
+  /* Your other custom CSS variables */
+  --green-color: #084680;
+}
+
+/* Add your component style overrides here */
+.ant-select-focused .ant-select-selector,
+.ant-select-selector:focus,
+.ant-select-selector:active,
+.ant-select-open .ant-select-selector,
+.ant-input-affix-wrapper-focused {
+  box-shadow: none !important;
+}
+
+.ant-tooltip-inner {
+  font-size: 14px;
+}
+
+.ant-drawer-right.ant-drawer-open .ant-drawer-content-wrapper {
+  max-width: 80vw;
+}
+
+.ant-select-item-option-content,
+.ant-select-selection-item {
+  text-transform: capitalize;
+}
+
+.ant-select-item-option-content i,
+.ant-breadcrumb .ant-breadcrumb-link i {
+  margin-right: 10px;
+}
+
+.ant-back-top {
+  right: 50px;
+}
+
+.ant-message {
+  bottom: 20px;
+  top: initial;
+}
+
+.ant-message-notice {
+  text-align: left;
+}
+
+.ant-rate-star:not(:last-child) {
+  margin-right: 2px;
+}
+
+input:focus {
+  box-shadow: none !important;
+}
+
+.ant-modal {
+  max-width: 90vw;
+}
+
+.ant-btn-primary,
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: var(--green-color);
+  border-color: var(--green-color);
+  opacity: 0.8;
+}
+
+.ant-breadcrumb {
+  margin-bottom: 1.875em; /* 30/16 */
+}
+
+.ant-breadcrumb .ant-breadcrumb-link {
+  font-family: "Roboto Bold";
+}
+
+/* Gradient Text */
+.rainbow {
+  background: linear-gradient(to right, #08ca3f, #0f130c, #49924d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Sticky Social Media Icons */
+.sticky-container {
+  padding: 10px;
+  margin: 0;
+  position: fixed;
+  right: -153px;
+  top: 35%;
+  width: 210px;
+  z-index: 1100;
+}
+
+.sticky li {
+  list-style-type: none;
+  background: transparent;
+  color: #efefef;
+  height: 30px;
+  padding: 0;
+  margin: 0 0 12px 0;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.sticky li:hover {
+  margin-left: -15px;
+}
+
+.sticky li img {
+  float: left;
+  margin: 5px 4px;
+  margin-right: 5px;
+}
+
+.sticky li p {
+  padding-top: 5px;
+  margin: 0;
+  line-height: 16px;
+  font-size: 11px;
+}
+
+.sticky li p a {
+  text-decoration: none;
+  color: #2C3539;
+}
+
+.sticky li p a:hover {
+  text-decoration: underline;
+} 

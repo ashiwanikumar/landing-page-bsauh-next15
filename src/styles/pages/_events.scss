@@ -1,0 +1,182 @@
+.event-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 10px 0 ;
+  
+    .event-card {
+        flex-basis: calc(50% - 10px);
+        border: 1px solid #ddd;
+        border-radius: 10px; // Slightly larger radius for a softer look
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(38, 57, 77, 0.2); // Softer shadow for depth
+        transition: box-shadow 0.3s, transform 0.2s;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 20px;
+        position: relative;
+
+        &:hover {
+            box-shadow: 0 8px 16px rgba(21, 191, 149, 0.3); // Enhanced shadow on hover
+          }
+
+          
+      &-image {
+        position: relative;
+        img {
+          width: 100%;
+          height: 280px;
+          display: block;
+          object-fit: cover;
+        }
+        .share-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+      }
+  
+      &-content {
+        padding: 15px;
+        text-align: center;
+        &-title {
+          font-size: 18px;
+          margin: 10px 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+  
+        &-actions {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+  .event-card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+  }
+
+  .event-card-button {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 0px 10px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    flex-basis: 32%; // Adjust the width to fit within the card
+  }
+
+  .ev-read-more {
+    background-color: #28a745 !important;
+    border: none !important;
+    &:hover {
+      background-color: #218838 !important;
+    }
+  }
+
+  .ev-register-event {
+    background-color: #17a2b8 !important;
+    border: none !important;
+    &:hover {
+      background-color: #138496 !important;
+    }
+    margin-left: auto; // Pushes the button to the right
+  }
+  
+  .event-code-title {
+    padding: 12px;
+    background: linear-gradient(
+      45deg,
+      #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc
+    );
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .no-event-card {
+    flex-basis: 100%; // Take full width
+    text-align: center;
+    background-color: #f8f9fa; // Light background for contrast
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    h1 {
+      margin: 0;
+      font-size: 1.5em; // Adjust font size as needed
+      color: #333; // Darker text for readability
+    }
+  }
+
+  .ribbon {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    position: absolute;
+    transform: scale(0.97);
+  
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      display: block;
+      border: 5px solid #d40202;
+    }
+  
+    span {
+      position: absolute;
+      display: block;
+      width: 225px;
+      padding: 12px 0;
+      background-color: #d40202;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      color: #fff;
+      font: 700 14px/1 "Lato", sans-serif;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      text-transform: uppercase;
+      text-align: center;
+    }
+  
+    &-top-left {
+      top: -15px;
+      left: -12px;
+      z-index: 99;
+  
+      &::before,
+      &::after {
+        border-top-color: transparent;
+        border-left-color: transparent;
+      }
+  
+      &::before {
+        top: 0;
+        right: 0;
+      }
+  
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+  
+      span {
+        right: -30px;
+        top: 36px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  

@@ -1,0 +1,49 @@
+/* AnnouncementBar.module.scss */
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .announcement-bar {
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045); // Colors for the gradient
+    background-size: 200% 200%; // Enlarge background size for the gradient effect
+    text-align: center;
+    padding: 2px 0;
+    animation: gradient 5s ease infinite; // Apply the animation (adjust duration as needed)
+  }
+  
+  .announcement-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .announcement-link {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .announcement-threads-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  
+    svg {
+      fill: white;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
