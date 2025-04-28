@@ -1,8 +1,7 @@
 import React from "react";
 import { NextSeo } from "next-seo";
 import { Breadcrumb, Row, Col } from "antd";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
+import { LayoutOne, Container } from "@components";
 
 const Events = () => {
   const socialMediaLinks = [

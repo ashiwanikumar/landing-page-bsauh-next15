@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import RegisterNow from "../../../components/event/RegisterNow";
-import Container from "../../../components/other/Container";
+import { LayoutOne, Container, RegisterNow } from "@components";
 import { NextSeo } from "next-seo";
 
 const EventRegister = (props) => {

@@ -1,10 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { Breadcrumb, Row, Col } from "antd";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
-import BlogSidebar from "../../components/blog/BlogSidebar";
-import PostDetailLayout from "../../components/detail/post/PostDetailLayout";
+import {
+  LayoutOne,
+  Container,
+  BlogSidebar,
+  PostDetailLayout,
+} from "@components";
 
 const BlogDetails = (props) => {
   const { blog, blogCategories, tags, recentBlogs } = props;

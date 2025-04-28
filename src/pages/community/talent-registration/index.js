@@ -18,11 +18,9 @@ import {
 } from "antd";
 import ReCAPTCHA from "react-google-recaptcha";
 // Import layout and other components
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
-import TestimonialArea from "../../../components/Home/TestimonialArea";
+import { LayoutOne, Container, TestimonialArea } from "@components";
 // Import skill
-import skillOptions from "../../../data/skillOptions.json";
+import skillOptions from "@data/skillOptions.json";
 //Next Seo
 import { NextSeo } from "next-seo";
 import Head from "next/head";
@@ -39,9 +37,8 @@ import {
 const { Option } = Select;
 
 const TalentRegistrationForm = () => {
-
   console.log("Talent Registration Form");
-  
+
   const [form] = Form.useForm();
   const captchaRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(false);

@@ -10,12 +10,14 @@ import {
   message,
 } from "antd";
 import { NextSeo } from "next-seo";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
-import SectionTitle from "../../../components/other/SectionTitle";
-import { eventCancellation } from "../../../apis/eventRegister";
+import {
+  LayoutOne,
+  Container,
+  SectionTitle,
+  TestimonialArea,
+} from "@components";
+import { eventCancellation } from "@apis/eventRegister";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
-import TestimonialArea from "../../../components/Home/TestimonialArea";
 
 const CancelRegistration = () => {
   const [formData, setFormData] = useState({

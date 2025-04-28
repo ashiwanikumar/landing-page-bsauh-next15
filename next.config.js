@@ -34,6 +34,7 @@ const nextConfig = {
 
   // Image configuration
   images: {
+    formats: ["image/avif", "image/webp"],
     disableStaticImages: true,
     unoptimized: true,
     domains: ["localhost"],
@@ -48,14 +49,35 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
 
+  // Updated experimental options
+  experimental: {
+    serverExternalPackages: [], // If you need external packages in Server Components
+    optimizeCss: true, // Enable CSS optimization
+    largePageDataBytes: 800 * 1024,
+    optimizePackageImports: ["antd", "react-icons"],
+  },
+
   webpack: (config, { dev, isServer }) => {
-    // Add aliases
+    // Add module aliases
     config.resolve.alias = {
       ...config.resolve.alias,
       styles: path.resolve(__dirname, "styles"),
       "/styles": path.resolve(__dirname, "styles"),
       "/assets": path.resolve(__dirname, "public/assets"),
       assets: path.resolve(__dirname, "public/assets"),
+      "@": path.resolve(__dirname, "./src"),
+      "@apis": path.resolve(__dirname, "./src/apis"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@common": path.resolve(__dirname, "./src/common"),
+      "@data": path.resolve(__dirname, "./src/data"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@styles": path.resolve(__dirname, "./src/styles"),
+      "@public": path.resolve(__dirname, "./public"),
+      "@assets": path.resolve(__dirname, "./public/assets"),
+      "@images": path.resolve(__dirname, "./public/assets/images"),
+      "@css": path.resolve(__dirname, "./public/assets/css"),
+      "@fonts": path.resolve(__dirname, "./public/assets/fonts"),
+      "@videos": path.resolve(__dirname, "./public/assets/videos"),
     };
 
     // Add MD file loader
@@ -135,10 +157,6 @@ const nextConfig = {
         headers: [{ key: "Content-Type", value: "text/xml" }],
       },
     ];
-  },
-
-  experimental: {
-    largePageDataBytes: 800 * 1024,
   },
 };
 

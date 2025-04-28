@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NextSeo } from "next-seo";
 import { Row, Col, Breadcrumb, Pagination } from "antd";
 import axios from "axios";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
-import BlogSidebar from "../../components/blog/BlogSidebar";
-import Post from "../../components/post/Post";
+import { LayoutOne, Container, BlogSidebar, Post } from "@components";
 import { useRouter } from "next/router";
 import Head from "next/head";
 

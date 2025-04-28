@@ -13,8 +13,7 @@ import { NextSeo } from "next-seo";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 import axios from "axios";
 import { useRouter } from "next/router";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
+import { LayoutOne, Container } from "@components";
 import Link from "next/link";
 
 const { Title, Paragraph } = Typography;

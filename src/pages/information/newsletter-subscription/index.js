@@ -10,17 +10,19 @@ import {
   notification,
 } from "antd";
 import { NextSeo } from "next-seo";
-import Container from "../../../components/other/Container";
-import LayoutOne from "../../../components/layout/LayoutOne";
+import {
+  LayoutOne,
+  Container,
+  SectionTitle,
+  TestimonialArea,
+} from "@components";
 import Head from "next/head";
-import SectionTitle from "../../../components/other/SectionTitle";
-import TestimonialArea from "../../../components/Home/TestimonialArea";
 
 import {
   subscribeNewsletter,
   sendNewsletterOtp,
   verifyNewsletterOtp,
-} from "../../../apis/newsletter";
+} from "@apis/newsletter";
 
 const NewsletterSubscriptionForm = () => {
   const [form] = Form.useForm();

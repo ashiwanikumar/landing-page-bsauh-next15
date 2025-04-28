@@ -28,11 +28,12 @@ import {
   WhatsAppOutlined,
   CopyOutlined,
 } from "@ant-design/icons";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
+import { LayoutOne, Container } from "@components";
 import dynamic from "next/dynamic";
-import { uploadTalentProfilePicture } from "../../../apis/talentRegistration";
-import { createCommunityMember } from "../../../apis/communityMember";
+import { uploadTalentProfilePicture } from "@apis/talentRegistration";
+import { createCommunityMember } from "@apis/communityMember";
+import ReCAPTCHA from "react-google-recaptcha";
+import confetti from "canvas-confetti";
 
 // Dynamically import ReCAPTCHA and confetti to avoid hydration issues
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {

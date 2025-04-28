@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { ConfigProvider } from "antd";
 import Head from "next/head";
+import CssLoadingFix from "../components/CssLoadingFix";
+import ScriptOptimizer from "../components/ScriptOptimizer";
 
 // Import main.scss which contains all styles
 import "../styles/main.scss";
@@ -72,6 +74,8 @@ function MyApp({ Component, pageProps, reduxStore }) {
           },
         }}
       >
+        <CssLoadingFix />
+        <ScriptOptimizer />
         <Component {...pageProps} />
       </ConfigProvider>
     </Provider>

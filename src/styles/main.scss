@@ -1,111 +1,112 @@
 /* Import production fixes first */
-@import "_prod";
+@use "_prod" as *;
+
 /* 
  * 1. Import variables, mixins, and functions first
  * This ensures these utilities are available to all other SCSS files
  */
-@import "abstract/variables";
-@import "abstract/mixins";
-@import "abstract/functions";
+@use "abstract/variables" as *;
+@use "abstract/mixins" as *;
+@use "abstract/functions" as *;
 
 /* 
   * 2. Base styles establish foundational elements
   */
-@import "base/container";
-@import "base/font-family";
-@import "base/reset";
-@import "base/root";
-@import "base/ui";
+@use "base/container" as *;
+@use "base/font-family" as *;
+@use "base/reset" as *;
+@use "base/root" as *;
+@use "base/ui" as *;
 
 /* 
   * 3. Component styles for reusable UI elements
   */
-@import "component/blog-sidebar";
-@import "component/cookie-banner";
-@import "component/cookie-square";
-@import "component/header-category-collapse";
-@import "component/header-function-items";
-@import "component/header-navigation";
-@import "component/header-search-form";
-@import "component/pagination";
-@import "component/post";
-@import "component/section-title";
-@import "component/shop-sidebar";
-@import "component/social-icons";
-@import "component/share-modal";
-@import "component/privacy-policy";
-@import "component/_announcement-card";
-@import "component/_announcement-bar-module";
-@import "component/_non-profit-preview";
-@import "component/_community-module";
-@import "component/_group-preview";
-@import "component/_event-webinar-preview";
-@import "component/_community-group-module";
-@import "component/_social-community-group-module";
-@import "component/_social-group-page-module";
-@import "component/_custom-modal-overlay";
-@import "component/_youtube-playlist";
-@import "component/_instagram-gallery";
-@import "component/_cancel-registration";
-@import "component/website-feedback-form";
-@import "component/_sitemap";
-@import "component/_newsletter-page";
-@import "component/_error-modal";
-@import "component/talent-registration";
-@import "component/event-gallery";
-@import "component/event";
-@import "component/_support";
-@import "component/_event-payment";
-@import "component/testimonial-area";
-@import "component/_event-register-module";
-@import "component/_subscribe-button";
-@import "component/_unsubscribe-component";
-@import "component/welfare-registration";
-@import "component/facebook-post-embed";
+@use "component/blog-sidebar" as *;
+@use "component/cookie-banner" as *;
+@use "component/cookie-square" as *;
+@use "component/header-category-collapse" as *;
+@use "component/header-function-items" as *;
+@use "component/header-navigation" as *;
+@use "component/header-search-form" as *;
+@use "component/pagination" as *;
+@use "component/post" as *;
+@use "component/section-title" as *;
+@use "component/shop-sidebar" as *;
+@use "component/social-icons" as *;
+@use "component/share-modal" as *;
+@use "component/privacy-policy" as *;
+@use "component/_announcement-card" as *;
+@use "component/_announcement-bar-module" as *;
+@use "component/_non-profit-preview" as *;
+@use "component/_community-module" as *;
+@use "component/_group-preview" as *;
+@use "component/_event-webinar-preview" as *;
+@use "component/_community-group-module" as *;
+@use "component/_social-community-group-module" as *;
+@use "component/_social-group-page-module" as *;
+@use "component/_custom-modal-overlay" as *;
+@use "component/_youtube-playlist" as *;
+@use "component/_instagram-gallery" as *;
+@use "component/_cancel-registration" as *;
+@use "component/website-feedback-form" as *;
+@use "component/_sitemap" as *;
+@use "component/_newsletter-page" as *;
+@use "component/_error-modal" as *;
+@use "component/talent-registration" as *;
+@use "component/event-gallery" as *;
+@use "component/event" as *;
+@use "component/_support" as *;
+@use "component/_event-payment" as *;
+@use "component/testimonial-area" as *;
+@use "component/_event-register-module" as *;
+@use "component/_subscribe-button" as *;
+@use "component/_unsubscribe-component" as *;
+@use "component/welfare-registration" as *;
+@use "component/facebook-post-embed" as *;
 
 /*
   * 4. Layout styles for page structure and major sections
   */
-@import "layout/banner";
-@import "layout/blog";
-@import "layout/event";
-@import "layout/event-post-detail-layout";
-@import "layout/footer";
-@import "layout/newfooter";
-@import "layout/function-menu";
-@import "layout/header";
-@import "layout/hero-slider";
-@import "layout/introduction";
-@import "layout/menu";
-@import "layout/testimonial";
-@import "layout/top-nav";
-@import "layout/bg-animation";
-@import "layout/section-categories";
+@use "layout/banner" as *;
+@use "layout/blog" as *;
+@use "layout/event" as *;
+@use "layout/event-post-detail-layout" as *;
+@use "layout/footer" as *;
+@use "layout/newfooter" as *;
+@use "layout/function-menu" as *;
+@use "layout/header" as *;
+@use "layout/hero-slider" as *;
+@use "layout/introduction" as *;
+@use "layout/menu" as *;
+@use "layout/testimonial" as *;
+@use "layout/top-nav" as *;
+@use "layout/bg-animation" as *;
+@use "layout/section-categories" as *;
 
 /*
   * 5. Page-specific styles
   */
-@import "pages/home";
-@import "pages/about";
-@import "pages/auth";
-@import "pages/events";
-@import "pages/blog";
-@import "pages/community";
-@import "pages/community-slug";
-@import "pages/eventForm";
-@import "pages/eventRegistrationForm";
-@import "pages/coming-soon";
-@import "pages/error";
-@import "pages/post-detail";
-@import "pages/bubbleAnimation";
-@import "pages/do-not-sell";
-@import "pages/leadership-team";
-@import "pages/member-feedback";
-@import "pages/partners";
-@import "pages/unsubscribe";
-@import "pages/welfare";
-@import "pages/gallery";
-@import "pages/linkedin";
+@use "pages/home" as *;
+@use "pages/about" as *;
+@use "pages/auth" as *;
+@use "pages/events" as *;
+@use "pages/blog" as *;
+@use "pages/community" as *;
+@use "pages/community-slug" as *;
+@use "pages/eventForm" as *;
+@use "pages/eventRegistrationForm" as *;
+@use "pages/coming-soon" as *;
+@use "pages/error" as *;
+@use "pages/post-detail" as *;
+@use "pages/bubbleAnimation" as *;
+@use "pages/do-not-sell" as *;
+@use "pages/leadership-team" as *;
+@use "pages/member-feedback" as *;
+@use "pages/partners" as *;
+@use "pages/unsubscribe" as *;
+@use "pages/welfare" as *;
+@use "pages/gallery" as *;
+@use "pages/linkedin" as *;
 
 /*
   * 6. Global styles and fallbacks

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@apis/*": ["./src/apis/*"],
+      "@components/*": ["./src/components/*"],
+      "@common/*": ["./src/common/*"],
+      "@data/*": ["./src/data/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@public/*": ["./public/*"],
+      "@assets/*": ["./public/assets/*"],
+      "@images/*": ["./public/assets/images/*"],
+      "@css/*": ["./public/assets/css/*"],
+      "@fonts/*": ["./public/assets/fonts/*"],
+      "@videos/*": ["./public/assets/videos/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", "out"]
+}

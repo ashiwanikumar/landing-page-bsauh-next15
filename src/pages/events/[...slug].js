@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Breadcrumb } from "antd";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
-import EventPostDetailLayout from "../../components/detail/post/EventPostDetailLayout";
+import { LayoutOne, Container, EventPostDetailLayout } from "@components";
 
 const EventDetails = (props) => {
   const { event, eventCategories, tags, recentEvents } = props;

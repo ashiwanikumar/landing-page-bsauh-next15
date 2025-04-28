@@ -1,25 +1,23 @@
 import { Row, Col, Card, Breadcrumb } from "antd";
 import React, { useEffect, useState } from "react";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
+import { LayoutOne, Container } from "@components";
 import { NextSeo } from "next-seo";
-
 function LeadershipTeam() {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
     setIsModalVisible(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const hideModal = () => {
     setIsModalVisible(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   useEffect(() => {
     // Load LinkedIn script
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = "https://platform.linkedin.com/badges/js/profile.js";
     script.async = true;
     script.defer = true;
@@ -28,11 +26,11 @@ function LeadershipTeam() {
     const handleEsc = (event) => {
       if (event.keyCode === 27) hideModal();
     };
-    window.addEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
 
     return () => {
       document.body.removeChild(script);
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
   }, []);
 
@@ -141,7 +139,8 @@ function LeadershipTeam() {
               </Breadcrumb.Item>
             </Breadcrumb>
             <h1 className="member-card-title">
-              Transforming community engagement through advanced technology solutions
+              Transforming community engagement through advanced technology
+              solutions
             </h1>
             <Row justify="center">
               <Col span={24}>
@@ -156,12 +155,17 @@ function LeadershipTeam() {
                         <div className="quote-container">
                           <i className="fas fa-quote-left quote-icon"></i>
                           <p className="banner-one-cnt">
-                            Adept technical contributions have played a pivotal role in propelling our community to the forefront of digital innovation, significantly enhancing our digital presence and engagement.
+                            Adept technical contributions have played a pivotal
+                            role in propelling our community to the forefront of
+                            digital innovation, significantly enhancing our
+                            digital presence and engagement.
                           </p>
                         </div>
                         <div className="leader-info">
                           <span className="name">
-                            <a onClick={showModal} className="ash-name-link">Ashiwani Kumar</a>
+                            <a onClick={showModal} className="ash-name-link">
+                              Ashiwani Kumar
+                            </a>
                           </span>
                           <span className="title">Developer</span>
                         </div>
@@ -204,22 +208,41 @@ function LeadershipTeam() {
       </LayoutOne>
       {isModalVisible && (
         <div className="ash-modal-overlay" onClick={hideModal}>
-          <div className="ash-custom-modal" onClick={e => e.stopPropagation()}>
-            <span className="ash-close-icon" onClick={hideModal}>&times;</span>
+          <div
+            className="ash-custom-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span className="ash-close-icon" onClick={hideModal}>
+              &times;
+            </span>
             <article className="ash-modal-content">
               <header>
-                <img src="/img/testimonial/ashiwani.png" alt="Ashiwani Kumar" className="ash-modal-image" />
+                <img
+                  src="/img/testimonial/ashiwani.png"
+                  alt="Ashiwani Kumar"
+                  className="ash-modal-image"
+                />
                 <h2>Ashiwani Kumar</h2>
                 <p className="ash-modal-title">Developer</p>
               </header>
               <section className="ash-modal-message">
                 <p>
-                  As a dedicated developer at Bihar Samaj Abu Dhabi, I leverage cutting-edge technologies to create innovative solutions that drive our community forward. My focus is on bridging complex technical concepts with user-friendly applications, enhancing our digital presence and member engagement.
+                  As a dedicated developer at Bihar Samaj Abu Dhabi, I leverage
+                  cutting-edge technologies to create innovative solutions that
+                  drive our community forward. My focus is on bridging complex
+                  technical concepts with user-friendly applications, enhancing
+                  our digital presence and member engagement.
                 </p>
                 <ul>
-                  <li>Developed and maintained the official Bihar Samaj Abu Dhabi website</li>
+                  <li>
+                    Developed and maintained the official Bihar Samaj Abu Dhabi
+                    website
+                  </li>
                   <li>Implemented secure member management systems</li>
-                  <li>Volunteering my skills to build stronger relationships within our community, without any charges</li>
+                  <li>
+                    Volunteering my skills to build stronger relationships
+                    within our community, without any charges
+                  </li>
                 </ul>
               </section>
             </article>

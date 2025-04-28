@@ -2,8 +2,7 @@ import React from "react";
 import { NextSeo } from "next-seo";
 import { Breadcrumb, Button, Row, Col, Typography, Space } from "antd";
 import { ShieldCheck, Info, ArrowRight } from "lucide-react";
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
+import { LayoutOne, Container } from "@components";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
 

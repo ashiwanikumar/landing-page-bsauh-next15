@@ -12,16 +12,19 @@ import {
   notification,
   Modal,
 } from "antd";
-import { NextSeo } from "next-seo";
-import Container from "../../../../../components/other/Container";
-import LayoutOne from "../../../../../components/layout/LayoutOne";
-import SectionTitle from "../../../../../components/other/SectionTitle";
-import TestimonialArea from "../../../../../components/Home/TestimonialArea";
+import {
+  Container,
+  LayoutOne,
+  SectionTitle,
+  TestimonialArea,
+} from "@components";
 import {
   sendFeedbackOtp,
   verifyFeedbackOTP,
   saveFeedback,
-} from "../../../../../apis/websiteFeedback";
+} from "@apis/websiteFeedback";
+import { NextSeo } from "next-seo";
+import Head from "next/head";
 
 const WebsiteFeedbackForm = () => {
   const [form] = Form.useForm();

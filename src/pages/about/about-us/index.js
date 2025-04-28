@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NextSeo } from "next-seo";
 import { Breadcrumb, Row, Col, Button, Carousel } from "antd";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
-import SectionTitle from "../../../components/other/SectionTitle";
-import TestimonialArea from "../../../components/Home/TestimonialArea";
+import {
+  LayoutOne,
+  Container,
+  SectionTitle,
+  TestimonialArea,
+} from "@components";
 import { CountUp } from "use-count-up";
 import Head from "next/head";
 

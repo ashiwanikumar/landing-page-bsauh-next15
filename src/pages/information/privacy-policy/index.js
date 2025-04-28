@@ -1,10 +1,8 @@
 import { Breadcrumb, Row, Col, message } from "antd";
 import { NextSeo } from "next-seo";
 import React from "react";
-import Container from "../../../components/other/Container";
+import { LayoutOne, Container, SectionTitle } from "@components";
 import Head from "next/head";
-import LayoutOne from "../../../components/layout/LayoutOne";
-import SectionTitle from "../../../components/other/SectionTitle";
 import { CopyOutlined } from "@ant-design/icons";
 
 const PrivacyPolicy = () => {

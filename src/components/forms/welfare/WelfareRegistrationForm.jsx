@@ -85,7 +85,7 @@ const INDIAN_STATES = [
   "West Bengal",
 ];
 
-const RegistrationFormWelfare = () => {
+const WelfareRegistrationForm = () => {
   const [form] = Form.useForm();
   const [currentStep, setCurrentStep] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -1021,4 +1021,4 @@ const RegistrationFormWelfare = () => {
   );
 };
 
-export default RegistrationFormWelfare;
+export default WelfareRegistrationForm;

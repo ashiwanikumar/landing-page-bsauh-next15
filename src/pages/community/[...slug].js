@@ -5,12 +5,11 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
-import LayoutOne from "../../components/layout/LayoutOne";
-import Container from "../../components/other/Container";
+import { LayoutOne, Container, TestimonialArea } from "@components";
 
 // Dynamically import components that might use browser APIs
 const TestimonialArea = dynamic(
-  () => import("../../components/Home/TestimonialArea"),
+  () => import("@components/Home/TestimonialArea"),
   { ssr: false }
 );
 

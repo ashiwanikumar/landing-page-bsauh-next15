@@ -4,9 +4,8 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 
 // Layout Components
-import LayoutOne from "../../../components/layout/LayoutOne";
-import Container from "../../../components/other/Container";
-import { RegistrationFormWelfare } from "../../../components";
+import { LayoutOne, Container } from "@components";
+import { RegistrationFormWelfare } from "@components";
 import { Breadcrumb } from "antd";
 
 // Dynamically import components that might use browser APIs
@@ -16,7 +15,7 @@ const GoogleOAuthProvider = dynamic(
 );
 
 const TestimonialArea = dynamic(
-  () => import("../../../components/Home/TestimonialArea"),
+  () => import("@components/Home/TestimonialArea"),
   { ssr: false }
 );
 
