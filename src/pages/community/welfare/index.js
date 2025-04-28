@@ -4,8 +4,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 
 // Layout Components
-import { LayoutOne, Container } from "@components";
-import { RegistrationFormWelfare } from "@components";
+import { LayoutOne, Container, WelfareRegistrationForm } from "@components";
 import { Breadcrumb } from "antd";
 
 // Dynamically import components that might use browser APIs
@@ -207,7 +206,7 @@ const WelfarePage = () => {
                 <GoogleOAuthProvider
                   clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
                 >
-                  <RegistrationFormWelfare />
+                  <WelfareRegistrationForm />
                 </GoogleOAuthProvider>
               ) : (
                 <div>Loading form...</div>
