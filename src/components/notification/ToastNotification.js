@@ -53,3 +53,11 @@ export const ErrorNotification = (message) => {
     duration: 3,
   });
 };
+
+// Add default export that includes all notification types
+export default {
+  SuccessNotification,
+  InfoNotification,
+  WarningNotification,
+  ErrorNotification,
+};

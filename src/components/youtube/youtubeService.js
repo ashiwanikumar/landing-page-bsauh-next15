@@ -11,3 +11,6 @@ const fetchPlaylistVideos = async (maxResults = 50) => {
 };
 
 export { fetchPlaylistVideos };
+
+// Add default export
+export default { fetchPlaylistVideos };

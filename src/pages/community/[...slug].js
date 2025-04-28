@@ -5,7 +5,7 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
-import { LayoutOne, Container, TestimonialArea } from "@components";
+import { LayoutOne, Container } from "@components";
 
 // Dynamically import components that might use browser APIs
 const TestimonialArea = dynamic(
