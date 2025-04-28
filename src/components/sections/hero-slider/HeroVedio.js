@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../styles/layout/_heroSection.scss";
+import styles from "../../../styles/layout/HeroSection.module.scss";
 
 const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(true);

@@ -90,6 +90,5 @@ export { default as TestimonialArea } from "./Home/TestimonialArea";
 export { default as ToastNotification } from "./notification/ToastNotification";
 export { default as UnsubscribeEmail } from "./Elements/UnsubscribeEmail/UnsubscribeEmail";
 export { default as FacebookPostEmbed } from "./FacebookPostEmbed/FacebookPostEmbed";
-export { default as Weather } from "./weather/Weather";
 
 // Partners Components
