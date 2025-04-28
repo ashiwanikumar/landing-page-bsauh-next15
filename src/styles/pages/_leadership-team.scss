@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .leadership-container {
   padding: 40px 0;
   background-color: #f8f9fa;
@@ -34,7 +35,7 @@
           top: 0;
           left: 0;
           font-size: 30px;
-          color: #0A66C2;
+          color: #0a66c2;
         }
 
         .banner-one-cnt {
@@ -52,7 +53,7 @@
           display: block;
           font-size: 24px;
           font-weight: 700;
-          color: #0A66C2;
+          color: #0a66c2;
           position: relative;
 
           .ash-name-link {
@@ -118,7 +119,7 @@
       justify-content: center;
       align-items: center;
       padding: 10px 20px;
-      background-color: #0A66C2;
+      background-color: #0a66c2;
       color: #ffffff;
       text-decoration: none;
       border-radius: 30px;
@@ -256,7 +257,7 @@
       h2 {
         font-size: 24px;
         font-weight: 700;
-        color: #0A66C2;
+        color: #0a66c2;
         margin-bottom: 5px;
       }
 

@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .coming-soon {
   padding: emCal(16, 50);
   @include mq(md) {

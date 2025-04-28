@@ -1,7 +1,18 @@
+@use "../abstract" as *;
 .member-card-title {
   padding: 12px;
-  background: linear-gradient(45deg,
-      #3b5998, #8b9dc3, #833ab4, #fd1d1d, #fcb045, #0077b5, #00a0dc, #1DA1F2, #0099cc);
+  background: linear-gradient(
+    45deg,
+    #3b5998,
+    #8b9dc3,
+    #833ab4,
+    #fd1d1d,
+    #fcb045,
+    #0077b5,
+    #00a0dc,
+    #1da1f2,
+    #0099cc
+  );
   text-align: center;
   font-size: 1.5em;
   color: white;
@@ -51,7 +62,7 @@
     left: 5px;
     width: 230px;
     height: 100%; // Adjust as needed
-    background: rgba(255, 255, 255, .95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(24px);
     border-radius: 10px;
     outline: 2px solid white;
@@ -162,8 +173,7 @@
     }
   }
 
-  transition: transform 0.3s ease,
-  box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
@@ -273,16 +283,18 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent);
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
       transition: all 0.4s ease;
     }
 

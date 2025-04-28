@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .blog {
   margin-bottom: $section-spacing;
   &-content {
@@ -29,7 +30,12 @@
   color: black; /* This will set the text color to black for all text inside .sa-post-content */
 }
 
-.sa-post-content h1, .sa-post-content h2, .sa-post-content h3, .sa-post-content h4, .sa-post-content h5, .sa-post-content h6 {
+.sa-post-content h1,
+.sa-post-content h2,
+.sa-post-content h3,
+.sa-post-content h4,
+.sa-post-content h5,
+.sa-post-content h6 {
   font-weight: bold; /* This will make all headers bold */
 }
 
@@ -77,14 +83,15 @@
 }
 
 .sa-post-content img {
-  max-width: 100%;  /* This limits the width to the size of its container. Adjust as needed. */
+  max-width: 100%; /* This limits the width to the size of its container. Adjust as needed. */
   height: auto;
-  max-height: 500px;  /* You can set a maximum height as well */
-  display: block;  /* This makes the image behave like a block level element */
-  margin: auto;  /* This will center the image if it's width is less than its container width */
+  max-height: 500px; /* You can set a maximum height as well */
+  display: block; /* This makes the image behave like a block level element */
+  margin: auto; /* This will center the image if it's width is less than its container width */
 }
 
-.sa-post-content ul, .sa-post-content ol {
+.sa-post-content ul,
+.sa-post-content ol {
   padding-left: 20px;
 }
 
@@ -93,7 +100,8 @@
   border-collapse: collapse;
 }
 
-.sa-post-content th, .sa-post-content td {
+.sa-post-content th,
+.sa-post-content td {
   border: 1px solid #ddd;
   padding: 8px;
 }

@@ -1,7 +1,13 @@
+@use "../abstract" as *;
 .top-nav-one {
   background-color: setShadeColor(border);
   padding: emCal(16, 10);
-  background: linear-gradient(to right, rgb(8, 202, 63), rgb(140, 187, 107), rgb(73, 146, 77));
+  background: linear-gradient(
+    to right,
+    rgb(8, 202, 63),
+    rgb(140, 187, 107),
+    rgb(73, 146, 77)
+  );
   @include mq(md) {
     display: none;
   }

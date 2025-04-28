@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .testimonial-one {
   padding: emCal(16, 30);
   border: 1px solid setShadeColor(light);

@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "variables" as *; // Import variables
 
 @function remCal($size) {
   @if ($size == "auto" or $size == "100%") {

@@ -1,3 +1,5 @@
+@use "../abstract" as *;
+
 .blog-sidebar {
   &-section {
     margin-bottom: emCal(16, 45);

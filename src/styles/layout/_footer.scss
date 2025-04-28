@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .footer {
   &-info {
     &__logo {
@@ -103,7 +104,8 @@
     }
 
     @keyframes gradientAnimation {
-      0%, 100% {
+      0%,
+      100% {
         background-position: 0% 50%;
       }
       50% {
@@ -112,23 +114,24 @@
     }
 
     .footer-subcribe {
-      background: linear-gradient(90deg, 
-                              #FF0000, /* UAE Red */
-                              #00732F, /* UAE Green */
-                              #817b7b, /* Shared White */
-                              #000000, /* UAE Black */
-                              #FF9933, /* India Saffron */
-                              #817b7b, /* Shared White */
-                              #138808); /* India Green */
-  padding: emCal(16, 30) 0;
-  .ant-input {
-    background-color: #edf2e7;
-    &::placeholder {
-      color: #000000;
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        /* UAE Red */ #00732f,
+        /* UAE Green */ #817b7b,
+        /* Shared White */ #000000,
+        /* UAE Black */ #ff9933,
+        /* India Saffron */ #817b7b,
+        /* Shared White */ #138808
+      ); /* India Green */
+      padding: emCal(16, 30) 0;
+      .ant-input {
+        background-color: #edf2e7;
+        &::placeholder {
+          color: #000000;
+        }
+      }
     }
-  }
-}
-    
   }
   &-bottom {
     padding: emCal(16, 15) 0;
@@ -246,7 +249,6 @@
     top: -16px;
   }
 }
-
 
 .footer-info-card {
   background: linear-gradient(to right, #009245b5, #d6ca228a);

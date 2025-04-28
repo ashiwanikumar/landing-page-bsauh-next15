@@ -3,7 +3,6 @@ const path = require("path");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  outputFileTracing: true,
 
   // Add this to help with caching issues
   generateBuildId: async () => {
@@ -51,7 +50,6 @@ const nextConfig = {
 
   // Updated experimental options
   experimental: {
-    serverExternalPackages: [], // If you need external packages in Server Components
     optimizeCss: true, // Enable CSS optimization
     largePageDataBytes: 800 * 1024,
     optimizePackageImports: ["antd", "react-icons"],

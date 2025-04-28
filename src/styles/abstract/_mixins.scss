@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "functions" as *;
+
 @mixin typo(
   $color: setShadeColor(dark),
   $fsz: 1rem,

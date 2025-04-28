@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 $primary-color: #508b57;
 $secondary-color: #f8f9fa;
 $text-color: #333;
@@ -6,7 +7,7 @@ $light-text: #f8f9fa;
 .newFooter {
   background-color: $secondary-color;
   color: $text-color;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 
   &__top {
     padding: 80px 0;
@@ -120,7 +121,7 @@ $light-text: #f8f9fa;
     overflow: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -50%;
       left: -50%;
@@ -172,7 +173,8 @@ $light-text: #f8f9fa;
   &__legal {
     text-align: right;
 
-    a, button {
+    a,
+    button {
       color: $light-text;
       text-decoration: none;
       margin-left: 20px;
@@ -225,7 +227,8 @@ $light-text: #f8f9fa;
     &__legal {
       text-align: center;
 
-      a, button {
+      a,
+      button {
         margin: 0 10px;
       }
     }

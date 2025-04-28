@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .hero-slider {
   &-background {
     position: absolute;
@@ -47,39 +48,38 @@
         p {
           @include typo(setShadeColor(medium), $lh: emCal(16, 20));
           margin-bottom: 0;
-          .slick-prev, .slick-next {
+          .slick-prev,
+          .slick-next {
             // Adjust these values as needed
             z-index: 20;
             top: 50%;
             transform: translateY(-50%);
           }
-          
+
           .slick-prev {
             left: 10px; // Adjust based on your design
           }
-          
+
           .slick-next {
             right: 10px; // Adjust based on your design
 
             @media (max-width: 768px) {
               &.-carousel {
-                .slick-prev, .slick-next {
+                .slick-prev,
+                .slick-next {
                   // Adjust positions for smaller screens
                 }
-            .custom-slick-dots {
-              bottom: 10px; // Move closer to the bottom of the slider
-              li button:before {
+                .custom-slick-dots {
+                  bottom: 10px; // Move closer to the bottom of the slider
+                  li button:before {
+                  }
+                }
+              }
+            }
+          }
         }
       }
-      }
     }
-  }
-    }
-      }
-    }
-
-
-  
   }
   &.-single {
     .hero-slider-wrapper {
@@ -170,7 +170,8 @@
     margin-bottom: $section-spacing;
     .hero-slider-content-wrapper {
       text-align: center;
-      .hero-slider-content, .slick-slider-item {
+      .hero-slider-content,
+      .slick-slider-item {
         img {
           @include imgCenter($width: emCal(16, 330), $type: contain);
           margin-left: auto;
@@ -180,7 +181,8 @@
       }
     }
   }
-  &.-style-five { // Assuming this is where you want to apply custom styles, adjust if necessary
+  &.-style-five {
+    // Assuming this is where you want to apply custom styles, adjust if necessary
     .slick-dots.custom-slick-dots {
       bottom: -25px; // Adjust position as needed
       li {
@@ -195,7 +197,7 @@
         }
       }
       li button:before {
-        content: ''; // Override Slick's default
+        content: ""; // Override Slick's default
         height: 3px;
         width: 30px;
         background-color: #eeebeb;

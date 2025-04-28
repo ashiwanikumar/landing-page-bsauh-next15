@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .function-items {
   &-item {
     @include link($fsz: emCal(16, 20));

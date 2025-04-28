@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .navigation {
   display: inline-block;
   @include mq(md) {

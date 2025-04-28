@@ -1,3 +1,4 @@
+@use "../abstract" as *;
 .banner-one {
   margin-bottom: remCal(100);
   &-item {
