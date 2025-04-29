@@ -48,9 +48,14 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
 
+  // Add future flag for consistent CSS behavior
+  future: {
+    strictPostcssConfiguration: true,
+  },
+
   // Updated experimental options
   experimental: {
-    optimizeCss: true, // Enable CSS optimization
+    optimizeCss: false, // Disable CSS optimization temporarily for debugging
     largePageDataBytes: 800 * 1024,
     optimizePackageImports: ["antd", "react-icons"],
   },

@@ -12,89 +12,72 @@ class MyDocument extends Document {
     const assetPrefix = process.env.NEXT_PUBLIC_FRONTEND_URL || "";
 
     return (
-      <Html lang="en" className="loading">
+      <Html lang="en">
         <Head>
           <meta name="emotion-insertion-point" content="" />
 
-          {/* Critical CSS */}
-          <link rel="preload" href="/critical.css" as="style" />
+          {/* Force stylesheet loading before rendering content */}
           <link rel="stylesheet" href="/critical.css" />
 
-          {/* Preconnect to external resources */}
-          <link
-            rel="preconnect"
-            href="https://cdnjs.cloudflare.com"
-            crossOrigin="anonymous"
-          />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
+          {/* Add nonce for security (optional) */}
+          <meta property="csp-nonce" content="random-nonce-value" />
 
-          {/* External CSS with optimized loading */}
+          {/* Preload key stylesheets to ensure they load first */}
           <link
-            rel="stylesheet"
+            rel="preload"
+            href={`${assetPrefix}/assets/css/elegant-icon.css`}
+            as="style"
+          />
+          <link
+            rel="preload"
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-            media="print"
-            onLoad="this.media='all'"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-            media="print"
-            onLoad="this.media='all'"
-          />
-          <link
-            href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css"
-            rel="stylesheet"
-            media="print"
-            onLoad="this.media='all'"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-            media="print"
-            onLoad="this.media='all'"
+            as="style"
+            crossOrigin="anonymous"
           />
 
-          {/* Fonts */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-            media="print"
-            onLoad="this.media='all'"
+          {/* Force style recalculation to prevent FOUC */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                document.documentElement.classList.add('loading');
+                
+                // Check for CSS loading
+                (function() {
+                  function ensureStylesLoaded() {
+                    var allStylesLoaded = true;
+                    var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length; i++) {
+                      var link = links[i];
+                      if (link.rel === 'stylesheet' && !link.sheet) {
+                        allStylesLoaded = false;
+                        break;
+                      }
+                    }
+                    
+                    if (allStylesLoaded) {
+                      document.documentElement.classList.remove('loading');
+                    } else {
+                      setTimeout(ensureStylesLoaded, 50);
+                    }
+                  }
+                  
+                  if (document.readyState === 'complete') {
+                    ensureStylesLoaded();
+                  } else {
+                    window.addEventListener('load', ensureStylesLoaded);
+                  }
+                  
+                  // Failsafe - always show content after 2 seconds
+                  setTimeout(function() {
+                    document.documentElement.classList.remove('loading');
+                  }, 2000);
+                })();
+              `,
+            }}
           />
 
           {/* Site assets */}
           <link rel="icon" href={`${assetPrefix}/fav.png`} />
-          <link
-            href={`${assetPrefix}/assets/css/elegant-icon.css`}
-            rel="stylesheet"
-            media="print"
-            onLoad="this.media='all'"
-          />
-
-          {/* Initial CSS loading handler - inline for performance */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                // Mark page as loading initially
-                document.documentElement.classList.add('loading');
-                
-                // Remove loading class when all resources are loaded
-                window.addEventListener('load', function() {
-                  document.documentElement.classList.remove('loading');
-                });
-                
-                // Failsafe - always show content after 2 seconds
-                setTimeout(function() {
-                  document.documentElement.classList.remove('loading');
-                }, 2000);
-              `,
-            }}
-          />
 
           {/* Noscript fallbacks */}
           <noscript>
@@ -108,27 +91,45 @@ class MyDocument extends Document {
         </Head>
 
         <body>
-          {/* Loading screen */}
-          <div className="loading-screen">
+          {/* Add a loading mask that shows until CSS is ready */}
+          <div
+            id="__loading-mask"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "#fff",
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <h2>Loading Bihar Samaj Abu Dhabi...</h2>
-            <p>Please wait while we prepare the content</p>
           </div>
 
-          {/* Google Tag Manager noscript */}
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-MHH8LNGX"
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  var mask = document.getElementById('__loading-mask');
+                  if (mask) {
+                    mask.style.display = 'none';
+                  }
+                }, 300);
+              });
+            `,
+            }}
+          />
 
           <Main />
-          <div id="subpages-sidebar" />
           <NextScript />
-
-          {/* Note: All scripts have been moved to the ScriptOptimizer component */}
+          {process.env.NODE_ENV === "production" && (
+            <script src="/production-fix.js" />
+          )}
         </body>
       </Html>
     );

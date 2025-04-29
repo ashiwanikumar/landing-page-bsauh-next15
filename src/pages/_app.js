@@ -1,71 +1,57 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Provider } from "react-redux";
 import { ConfigProvider } from "antd";
 import Head from "next/head";
-import CssLoadingFix from "../components/CssLoadingFix";
-import ScriptOptimizer from "../components/ScriptOptimizer";
 
-// Import main.scss which contains all styles
 import "../styles/main.scss";
-
 import withReduxStore from "../common/withReduxStore";
 
 function MyApp({ Component, pageProps, reduxStore }) {
-  // Force a CSS reload to avoid FOUC (Flash of Unstyled Content)
+  // Force stylesheet recalculation on client-side
   useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      process.env.NODE_ENV === "production"
-    ) {
-      // Check if we can find Next.js CSS
-      let cssFound = false;
+    // Function to fix CSS flickering in production
+    const fixCSSFlicker = () => {
+      // Force a browser reflow to ensure styles are applied
+      document.body.offsetHeight;
 
-      // Look for stylesheets from Next.js
-      for (let i = 0; i < document.styleSheets.length; i++) {
-        try {
-          const sheet = document.styleSheets[i];
-          if (sheet.href && sheet.href.includes("_next/static/css/")) {
-            cssFound = true;
-            break;
-          }
-        } catch (e) {
-          // CORS may prevent access to some stylesheets
-          continue;
-        }
-      }
+      // Add a minimal style element to force CSS recalculation
+      const styleEl = document.createElement("style");
+      styleEl.textContent = " ";
+      document.head.appendChild(styleEl);
 
-      // If CSS not found, try loading it directly
-      if (!cssFound) {
-        console.warn("No Next.js CSS detected, attempting to load directly");
-
-        // Try to find the main CSS file and load it directly
-        const links = document.getElementsByTagName("link");
-        for (let i = 0; i < links.length; i++) {
-          if (links[i].href && links[i].href.includes("_next/static/css/")) {
-            const cssPath = links[i].href;
-
-            // Create a new link element
-            const newLink = document.createElement("link");
-            newLink.rel = "stylesheet";
-            newLink.href = cssPath;
-            document.head.appendChild(newLink);
-
-            break;
-          }
-        }
-      }
-
-      // Remove loading class after a short delay
+      // Remove it after a tiny delay
       setTimeout(() => {
-        document.documentElement.classList.remove("loading");
-      }, 500);
-    }
+        document.head.removeChild(styleEl);
+      }, 100);
+
+      // Remove loading class if still present
+      document.documentElement.classList.remove("loading");
+    };
+
+    // Execute after a short delay to ensure CSS is loaded
+    setTimeout(fixCSSFlicker, 100);
+
+    // Also run on route changes (useful for Next.js page transitions)
+    const handleRouteChange = () => {
+      setTimeout(fixCSSFlicker, 100);
+    };
+
+    // Clean up event listeners on unmount
+    return () => {
+      // Any cleanup code if needed
+    };
   }, []);
 
   return (
     <Provider store={reduxStore}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Add additional viewport controls */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+        {/* Force CSS recalculation metatag */}
+        <meta name="css-refresh" content={Date.now()} />
       </Head>
       <ConfigProvider
         theme={{
@@ -74,8 +60,6 @@ function MyApp({ Component, pageProps, reduxStore }) {
           },
         }}
       >
-        <CssLoadingFix />
-        <ScriptOptimizer />
         <Component {...pageProps} />
       </ConfigProvider>
     </Provider>

@@ -42,3 +42,29 @@ html.loading {
   html:not(.loading) .loading-screen {
     display: none;
   }
+
+/* Add these to your existing critical.css */
+.header-area {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.top-bar-wrapper {
+  display: block !important;
+  background-color: #73c97c !important;
+  color: #fff !important;
+}
+
+/* Fix any flickering container elements */
+.container, .container-fluid {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Force critical elements to appear immediately */
+body > header,
+body > footer,
+main > .container:first-child {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
