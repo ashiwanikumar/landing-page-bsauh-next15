@@ -9,3 +9,6 @@ export const NextArrow = ({ currentSlide, slideCount, ...arrowProps }) => (
     <i className="far fa-angle-right"></i>
   </a>
 );
+
+// Add default export for both arrow components
+export default { PrevArrow, NextArrow };
